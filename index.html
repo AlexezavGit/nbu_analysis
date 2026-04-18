@@ -3,222 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FEEL Again × НБУ — Стратегічна записка</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<title>FEEL Again × НБУ — Аналітична записка v10</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-/* ─── LIGHT (default) ─── */
+
+/* ─── LIGHT ─── */
 :root,[data-theme="light"]{
-  --bg:#f4f1ea;--surface:#ffffff;--panel:#faf7f0;--steel:#ebe4d3;
-  --gold:#8b6914;--gold-light:#6a4f0e;--gold-dim:rgba(139,105,20,0.06);--gold-border:rgba(139,105,20,0.22);
+  --bg:#f2f0eb;--surface:#ffffff;--panel:#faf8f4;--steel:#e8e4d8;
+  --gold:#8b6914;--gold-light:#6a4f0e;--gold-dim:rgba(139,105,20,0.05);--gold-border:rgba(139,105,20,0.18);
   --text:#1f2430;--text-sec:#5a6375;--heading:#0a1628;
-  --teal:#1a8a7e;--teal-dim:rgba(26,138,126,0.08);--teal-border:rgba(26,138,126,0.30);
-  --red:#b5331f;--red-dim:rgba(181,51,31,0.06);--red-border:rgba(181,51,31,0.25);
-  --green:#2a7a50;--green-dim:rgba(42,122,80,0.08);
-  --shadow:0 8px 40px rgba(0,0,0,0.07);
-  --header-bg:linear-gradient(160deg,#f5f0e6 0%,#ffffff 100%);
+  --teal:#1a8a7e;--teal-dim:rgba(26,138,126,0.06);--teal-border:rgba(26,138,126,0.25);
+  --red:#b5331f;--red-dim:rgba(181,51,31,0.05);--red-border:rgba(181,51,31,0.20);
+  --green:#2a7a50;--green-dim:rgba(42,122,80,0.06);
+  --navy:#0a1628;
+  --shadow:0 4px 24px rgba(0,0,0,0.06);
 }
 /* ─── DARK ─── */
 [data-theme="dark"]{
-  --bg:#0a1628;--surface:#131d2e;--panel:#1a2636;--steel:#2d3a4a;
-  --gold:#c8a45c;--gold-light:#e8d5a0;--gold-dim:rgba(200,164,92,0.07);--gold-border:rgba(200,164,92,0.20);
-  --text:#cdd3de;--text-sec:#7e8a9e;--heading:#eef0f4;
-  --teal:#2ec4b6;--teal-dim:rgba(46,196,182,0.10);--teal-border:rgba(46,196,182,0.35);
-  --red:#e05545;--red-dim:rgba(224,85,69,0.10);--red-border:rgba(224,85,69,0.25);
-  --green:#3fbf7f;--green-dim:rgba(63,191,127,0.10);
-  --shadow:0 20px 60px rgba(0,0,0,0.5);
-  --header-bg:linear-gradient(160deg,#1a2a40 0%,#0d1824 100%);
+  --bg:#080f1c;--surface:#0f1826;--panel:#151f30;--steel:#253042;
+  --gold:#c8a45c;--gold-light:#e8d5a0;--gold-dim:rgba(200,164,92,0.06);--gold-border:rgba(200,164,92,0.18);
+  --text:#c8cdd8;--text-sec:#6e7a90;--heading:#e8ecf2;
+  --teal:#2ec4b6;--teal-dim:rgba(46,196,182,0.08);--teal-border:rgba(46,196,182,0.28);
+  --red:#e05545;--red-dim:rgba(224,85,69,0.08);--red-border:rgba(224,85,69,0.22);
+  --green:#3fbf7f;--green-dim:rgba(63,191,127,0.08);
+  --navy:#0a1628;
+  --shadow:0 8px 40px rgba(0,0,0,0.4);
 }
+
 @media print{
-  [data-theme]{--bg:#fff;--surface:#fff;--panel:#f8f8f8;--steel:#ddd;--gold:#8b6914;--gold-light:#5a4510;--gold-dim:#faf6ed;--gold-border:#d4c089;--text:#1a1a1a;--text-sec:#555;--heading:#000;--teal:#1a8a7e;--teal-dim:#e8f7f5;--teal-border:#1a8a7e;--red:#b5331f;--red-dim:#fbeae8;--green:#2a7a50;--green-dim:#eaf5f0;--shadow:none;--header-bg:#f5f0e6}
+  [data-theme]{--bg:#fff;--surface:#fff;--panel:#f8f8f8;--steel:#ddd;--gold:#8b6914;--text:#1a1a1a;--text-sec:#555;--heading:#000;--shadow:none}
   body{background:#fff;padding:0}
-  .controls{display:none!important}
+  .controls,.hero-wrapper{display:none!important}
   .page{box-shadow:none;border:none;margin:0;max-width:100%}
-  .hero-wrapper{display:none!important;}
   .section{page-break-inside:avoid}
   .pb{page-break-before:always}
 }
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.72;font-size:15px;-webkit-font-smoothing:antialiased;transition:background 0.3s}
 
-.controls{position:fixed;top:16px;right:16px;z-index:100;display:flex;gap:6px;background:var(--surface);border:1px solid var(--gold-border);padding:5px;border-radius:6px;box-shadow:var(--shadow)}
-.cb{background:transparent;border:1px solid var(--gold-border);color:var(--text-sec);padding:5px 11px;font-size:10.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:4px;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,-apple-system,sans-serif;line-height:1.72;font-size:15px;-webkit-font-smoothing:antialiased;transition:background 0.3s}
+
+/* ─── CONTROLS ─── */
+.controls{position:fixed;top:14px;right:14px;z-index:200;display:flex;gap:5px;background:var(--surface);border:1px solid var(--gold-border);padding:4px;border-radius:6px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.cb{background:transparent;border:1px solid var(--gold-border);color:var(--text-sec);padding:5px 10px;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:4px;font-family:'DM Sans',sans-serif;transition:all 0.2s}
 .cb:hover{color:var(--gold);border-color:var(--gold)}
 .cb.on{background:var(--gold);color:#fff;border-color:var(--gold)}
-[data-theme="light"] .cb.on{color:#fff}
 .cd{width:1px;background:var(--gold-border);margin:0 2px}
 
-/* HERO PAGE */
-.hero-wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    background-color: var(--header-bg);
-}
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('hero.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-    z-index: 1;
-    mix-blend-mode: multiply;
-}
-[data-theme="dark"] .hero-bg { opacity: 0.25; mix-blend-mode: screen; }
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 30%, var(--bg) 95%);
-    z-index: 2;
-}
-.hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 900px;
-    width: 100%;
-    padding: 60px 40px;
-    text-align: left;
-    padding-bottom: 70px;
-}
-.hero-content h1 {
-    font-family:'Space Grotesk',sans-serif;
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--heading);
-    line-height: 1.15;
-    margin-bottom: 24px;
-    letter-spacing: -0.5px;
-    max-width: 800px;
-}
-.hero-content .sub {
-    font-size: 18px;
-    color: var(--text-sec);
-    max-width: 700px;
-    line-height: 1.5;
-}
+/* ─── HERO ─── */
+.hero-wrapper{width:100%;max-width:920px;margin:0 auto 0;background:var(--navy);position:relative;overflow:hidden;min-height:480px;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background:url('hero.png') center center/cover no-repeat;opacity:0.25}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,40,0.3) 0%,rgba(10,22,40,0.85) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:60px 40px;max-width:700px}
+.hero-badge{display:inline-block;border:1px solid rgba(200,164,92,0.4);color:#c8a45c;font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;margin-bottom:24px}
+.hero-title{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px;letter-spacing:-0.3px}
+.hero-sub{font-size:15px;color:rgba(200,210,225,0.85);line-height:1.65;margin-bottom:28px}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-n{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#c8a45c;line-height:1}
+.hero-stat-l{font-size:10px;color:rgba(200,210,225,0.6);margin-top:4px;letter-spacing:0.3px}
+.hero-meta{position:absolute;bottom:16px;left:0;right:0;display:flex;justify-content:center;gap:24px;z-index:3}
+.hero-mi{font-size:10px;color:rgba(200,210,225,0.5)}
+.hero-mi strong{color:#c8a45c;font-weight:600}
 
-.page{max-width:900px;margin:0 auto;background:var(--surface);box-shadow:var(--shadow);border:1px solid var(--gold-border); position: relative; z-index: 10; margin-top: -50px; margin-bottom: 80px; border-radius: 4px;}
+/* ─── PAGE ─── */
+.page{max-width:920px;margin:0 auto;background:var(--surface);box-shadow:var(--shadow);border:1px solid var(--gold-border);border-top:none}
 
-/* HEADER */
-.conf{background:var(--steel);padding:6px 40px;font-size:9.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-sec);display:flex;justify-content:space-between; border-top-left-radius: 4px; border-top-right-radius: 4px;}
-.hdr{background:var(--header-bg);padding:36px 40px 30px;border-bottom:2px solid var(--gold)}
-.logo-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--gold-border)}
-.logo-feel{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--heading);letter-spacing:2px}
-.logo-feel span{color:var(--gold)}
-.logo-nbu{text-align:right}
-.nbu-badge{background:var(--gold);color:#fff;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase; border-radius: 2px;}
-[data-theme="light"] .nbu-badge{color:#fff}
-.nbu-cap{font-size:9px;color:var(--text-sec);margin-top:2px}
-.hdr h1{font-family:'Space Grotesk',sans-serif;font-size:25px;font-weight:700;color:var(--heading);line-height:1.25;margin-bottom:6px}
-.hdr .sub{font-size:14px;color:var(--text-sec)}
-.meta-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:16px;padding-top:14px;border-top:1px solid var(--gold-border)}
-.mi{font-size:10.5px;color:var(--text-sec)}
-.mi strong{color:var(--gold);font-weight:600}
+/* ─── HEADER BAR ─── */
+.topbar{background:var(--panel);padding:8px 40px;font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-sec);display:flex;justify-content:space-between;border-bottom:1px solid var(--steel)}
 
-/* CONTENT */
-.ct{padding:0 40px 40px}
-.section{padding-top:32px;padding-bottom:10px}
-.sl{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+/* ─── CONTENT ─── */
+.ct{padding:0 44px 44px}
+.section{padding-top:32px;padding-bottom:8px}
+.sl{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .sl::after{content:'';flex:1;height:1px;background:var(--gold-border)}
-h2{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:var(--heading);margin-bottom:16px;line-height:1.3; letter-spacing: -0.3px;}
-h3{font-size:15px;font-weight:700;color:var(--gold);margin-bottom:8px;margin-top:20px;letter-spacing:0.5px}
-p{margin-bottom:14px}
+h2{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:var(--heading);margin-bottom:12px;line-height:1.28;letter-spacing:-0.2px}
+h3{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:18px;letter-spacing:0.2px}
+p{margin-bottom:12px}
 strong{color:var(--heading);font-weight:600}
 em{color:var(--gold);font-style:normal;font-weight:500}
-.src{font-size:10px;color:var(--text-sec);font-style:italic}
-a{color:var(--gold);text-decoration:none; transition: opacity 0.2s;}
-a:hover{opacity: 0.8; text-decoration:underline}
+.src{font-size:9px;color:var(--text-sec);font-style:italic}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+.fn{font-size:9.5px;color:var(--text-sec);vertical-align:super;margin-left:1px}
 
-/* BLOCKS */
-.ex{background:var(--gold-dim);border-left:3px solid var(--gold);padding:22px 24px;margin:20px 0; border-radius: 0 4px 4px 0;}
-.ex p{font-size:14px;color:var(--heading);margin-bottom:10px;line-height:1.72}
+/* ─── BLOCKS ─── */
+.ex{background:var(--gold-dim);border-left:3px solid var(--gold);padding:20px 24px;margin:16px 0}
+.ex p{font-size:14px;color:var(--heading);margin-bottom:8px;line-height:1.72}
 .ex p:last-child{margin-bottom:0}
 
-.warn{background:var(--red-dim);border:1px solid var(--red-border);padding:24px 24px;margin:24px 0;position:relative; border-radius: 4px;}
-.warn::before{content:'';position:absolute;top:-10px;left:20px;background:var(--red);color:#fff;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:3px 10px; border-radius: 2px;}
+.warn{background:var(--red-dim);border:1px solid var(--red-border);padding:20px 24px;margin:14px 0;position:relative}
+.warn::before{content:'';position:absolute;top:-10px;left:20px;background:var(--red);color:#fff;font-size:8px;font-weight:700;letter-spacing:1.5px;padding:2px 10px}
 [data-lang="uk"] .warn::before{content:'ЦІНА БЕЗДІЯЛЬНОСТІ'}
 [data-lang="en"] .warn::before{content:'COST OF INACTION'}
-.warn p{color:var(--heading);font-size:14.5px;margin-bottom:10px}
+.warn p{color:var(--heading);font-size:14px;margin-bottom:8px}
 .warn p:last-child{margin-bottom:0}
 
-.teal-box{background:var(--teal-dim);border:1px solid var(--teal-border);border-left:3px solid var(--teal);padding:22px 24px;margin:20px 0; border-radius: 0 4px 4px 0;}
+.teal-box{background:var(--teal-dim);border:1px solid var(--teal-border);border-left:3px solid var(--teal);padding:18px 22px;margin:16px 0}
 .teal-box h3{color:var(--teal);margin-top:0}
 
-.hl{background:var(--gold-dim);border:1px solid var(--gold-border);padding:20px 24px;margin:20px 0; border-radius: 4px;}
-.hl p{color:var(--heading);font-size:14.5px}
+.hl{background:var(--gold-dim);border:1px solid var(--gold-border);padding:18px 22px;margin:16px 0}
+.hl p{color:var(--heading);font-size:14px}
 
-/* GRIDS */
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
-.st{background:var(--panel);border:1px solid var(--gold-border);padding:18px 16px;text-align:center; border-radius: 4px; transition: transform 0.2s, box-shadow 0.2s;}
-.st:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-.st-n{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1; letter-spacing: -1px;}
-.st-u{font-size:11px;font-weight:600; text-transform: uppercase; letter-spacing:0.5px; color:var(--text-sec);margin-top:6px}
-.st-l{font-size:10px;color:var(--text-sec);margin-top:8px;line-height:1.4; opacity: 0.8;}
+/* ─── GRIDS ─── */
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.st{background:var(--panel);border:1px solid var(--gold-border);padding:14px 12px;text-align:center}
+.st-n{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1}
+.st-u{font-size:10px;color:var(--text-sec);margin-top:3px}
+.st-l{font-size:9px;color:var(--text-sec);margin-top:5px;line-height:1.35}
 
-/* CHAIN — 2-column card grid */
-.chain{counter-reset:ch;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-.chain-step{counter-increment:ch;background:var(--panel);border:1px solid var(--gold-border);padding:20px 24px;position:relative; border-radius: 4px; transition: transform 0.2s, background 0.2s; cursor: default;}
-.chain-step:hover { transform: translateY(-2px); background: var(--surface); box-shadow: var(--shadow);}
-.chain-step::before{content:counter(ch,decimal-leading-zero);font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--gold-border);line-height:1;position:absolute;top:16px;right:18px; opacity: 0.5; transition: opacity 0.2s, color 0.2s;}
-.chain-step:hover::before { opacity: 1; color: var(--gold); }
-.ch-title{font-size:16px;font-weight:600;color:var(--heading);margin-bottom:8px;padding-right:40px;line-height:1.3}
-.ch-desc{font-size:14px;color:var(--text);line-height:1.6}
-.ch-horizon{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;margin-top:12px; border-radius: 4px;}
+/* ─── CHAIN ─── */
+.chain{counter-reset:ch;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.chain-step{counter-increment:ch;background:var(--panel);border:1px solid var(--gold-border);padding:16px 18px;position:relative;transition:border-color 0.2s}
+.chain-step:hover{border-color:var(--gold)}
+.chain-step::before{content:counter(ch,decimal-leading-zero);font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--gold-border);line-height:1;position:absolute;top:12px;right:14px}
+.ch-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--heading);margin-bottom:4px;padding-right:36px}
+.ch-desc{font-size:13.5px;color:var(--text);line-height:1.6}
+.ch-horizon{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;margin-top:8px}
 .hz-q{background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-border)}
 .hz-m{background:var(--gold-dim);color:var(--gold);border:1px solid var(--gold-border)}
 .hz-l{background:var(--green-dim);color:var(--green);border:1px solid rgba(42,122,80,0.25)}
 
-/* TABLE */
-.dt{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-.dt th{background:var(--panel);color:var(--gold);font-weight:700;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;padding:14px 16px;text-align:left;border-bottom:2px solid var(--gold-border)}
-.dt td{padding:14px 16px;border-bottom:1px solid var(--steel);color:var(--text); vertical-align: top;}
+/* ─── TABLE ─── */
+.dt{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.dt th{background:var(--panel);color:var(--gold);font-weight:600;font-size:9.5px;letter-spacing:0.5px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--gold-border)}
+.dt td{padding:10px 12px;border-bottom:1px solid var(--steel);color:var(--text)}
 .dt tr:last-child td{border-bottom:none}
-.dt tr:hover td { background: var(--panel); }
 
-/* FOOTER */
-.ftr{border-top:2px solid var(--gold);padding:32px 40px;background:var(--panel);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;}
-.sig-n{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:var(--heading)}
-.sig-r{font-size:12px;color:var(--text-sec);margin-top:4px}
-.sig-c{font-size:12px;color:var(--text-sec);text-align:right; line-height: 1.6;}
+/* ─── EROSION COUNTER ─── */
+.erosion{background:linear-gradient(135deg,var(--red-dim),rgba(181,51,31,0.02));border:1px solid var(--red-border);padding:24px;margin:18px 0;text-align:center}
+.erosion-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.erosion-val{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--red);line-height:1}
+.erosion-sub{font-size:12px;color:var(--text-sec);margin-top:6px}
+.erosion-formula{font-size:11px;color:var(--text-sec);margin-top:10px;font-style:italic}
+
+/* ─── CTA ─── */
+.cta-row{display:flex;gap:12px;justify-content:center;margin:24px 0;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:12px 28px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.3px;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s}
+.cta-btn:hover{background:var(--gold-light);text-decoration:none;transform:translateY(-1px);box-shadow:0 4px 16px rgba(139,105,20,0.25)}
+.cta-btn-sec{background:transparent;border:1px solid var(--gold-border);color:var(--gold)}
+.cta-btn-sec:hover{background:var(--gold-dim);border-color:var(--gold)}
+
+/* ─── FOOTER ─── */
+.ftr{border-top:2px solid var(--gold);padding:22px 44px;background:var(--panel);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px}
+.sig-n{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--heading)}
+.sig-r{font-size:11px;color:var(--text-sec);margin-top:2px}
+.sig-c{font-size:11px;color:var(--text-sec);text-align:right}
 .sig-c a{color:var(--gold)}
 
-.hr{border:none;border-top:1px solid var(--steel);margin: 32px 0}
-
-/* CTA DASHBOARD */
-.cta-box { background: var(--panel); border: 1px solid var(--teal-border); border-left: 4px solid var(--teal); padding: 32px 40px; margin-top: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; gap: 24px; box-shadow: var(--shadow); margin-bottom: 16px;}
-.cta-text h2 { margin-bottom: 8px; color: var(--heading); font-size: 20px;}
-.cta-text p { margin-bottom: 0; color: var(--text-sec); font-size: 14px;}
-.cta-btn { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--teal); color: #fff; padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 4px; transition: background 0.2s, transform 0.2s;}
-.cta-btn:hover { background: #23a095; transform: translateY(-2px); color: #fff; text-decoration: none;}
+.hr{border:none;border-top:1px solid var(--steel);margin:0}
 
 [data-lang="uk"] [le]{display:none}
 [data-lang="en"] [lu]{display:none}
 
-@media(max-width:768px){
+/* ─── INTERACTIVE ACCORDION ─── */
+.acc-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:14px 18px;background:var(--panel);border:1px solid var(--gold-border);margin-top:8px;transition:background 0.2s;user-select:none}
+.acc-header:hover{background:var(--gold-dim)}
+.acc-header h3{margin:0;font-size:14px}
+.acc-arrow{font-size:14px;color:var(--gold);transition:transform 0.2s}
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.35s ease;border:1px solid var(--gold-border);border-top:none}
+.acc-body.open{max-height:800px}
+.acc-inner{padding:16px 18px}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:720px){
   body{padding:0}
-  .ct{padding:0 24px 32px}
-  .hero-wrapper { min-height: 60vh; }
-  .hero-content { padding: 40px 24px 60px; }
-  .hero-content h1 { font-size: 32px; }
-  .hdr,.conf{padding-left:24px;padding-right:24px}
-  .g4,.g3{grid-template-columns:repeat(2,1fr)}
+  .ct{padding:0 18px 28px}
+  .topbar{padding-left:18px;padding-right:18px}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
   .g2,.chain{grid-template-columns:1fr}
-  .ftr{padding:24px; flex-direction: column; align-items: flex-start;}
-  .sig-c { text-align: left; margin-top: 16px;}
+  .ftr{padding:18px}
   .controls{top:8px;right:8px}
-  .cta-box { flex-direction: column; text-align: left; align-items: flex-start; padding: 24px;}
-  .dt, .dt tbody, .dt tr, .dt td, .dt th { display: block; }
-  .dt th { display: none; }
-  .dt td { border-bottom: none; padding: 12px 16px; }
-  .dt tr { border-bottom: 2px solid var(--steel); padding: 16px 0; }
+  .cb{padding:4px 7px;font-size:9px}
+  .hero-wrapper{min-height:400px}
+  .hero-title{font-size:24px}
+  .hero-stats{gap:20px}
+  .hero-content{padding:40px 20px}
+  .erosion-val{font-size:28px}
 }
 </style>
 </head>
@@ -228,57 +191,96 @@ a:hover{opacity: 0.8; text-decoration:underline}
   <button class="cb" id="lu">UK</button>
   <button class="cb" id="le">EN</button>
   <div class="cd"></div>
-  <button class="cb" id="tl">&#9728;</button>
-  <button class="cb" id="td">&#9790;</button>
+  <button class="cb" id="tl">&#9685;</button>
+  <button class="cb" id="td">&#9684;</button>
 </div>
 
+<!-- ═══════════════════════════════════════════ -->
+<!-- HERO PAGE                                   -->
+<!-- ═══════════════════════════════════════════ -->
 <div class="hero-wrapper">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1 lu>Комплементарність цілей: MHPSS-сектор крізь фінансову призму</h1>
-        <h1 le>Complementarity of goals: the MHPSS sector through a financial lens</h1>
-        <div class="sub" lu>Інституційна роль НБУ в нормалізації даних, координації ресурсів та побудові високодохідного сектору ментального здоров'я</div>
-        <div class="sub" le>NBU's institutional role in data normalisation, resource coordination, and building a high-yield mental health sector</div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge" lu>Аналітична записка · Конфіденційно</div>
+    <div class="hero-badge" le>Analytical Brief · Confidential</div>
+    <h1 class="hero-title" lu>Сектор MHPSS крізь фінансову призму: роль НБУ як регулятора ринку та національного клірингхаусу</h1>
+    <h1 class="hero-title" le>The MHPSS Sector Through a Financial Lens: NBU's Role as Market Regulator and National Clearinghouse</h1>
+    <p class="hero-sub" lu>Інституційна роль Національного банку в нормалізації даних, координації ресурсів та побудові високодохідного сектору ментального здоров'я</p>
+    <p class="hero-sub" le>The National Bank's institutional role in data normalisation, resource coordination, and building a high-yield mental health sector</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-n">$8B</div><div class="hero-stat-l" lu>втрати ВВП / рік</div><div class="hero-stat-l" le>GDP loss / year</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">$535M</div><div class="hero-stat-l" lu>WB: виділено, не рухається</div><div class="hero-stat-l" le>WB: allocated, stalled</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">0%</div><div class="hero-stat-l" lu>синхронізація даних</div><div class="hero-stat-l" le>data synchronisation</div></div>
+      <div class="hero-stat"><div class="hero-stat-n">$5M/міс</div><div class="hero-stat-l" lu>ерозія спроможності</div><div class="hero-stat-l" le>capacity erosion</div></div>
     </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-mi"><strong lu>Адресат:</strong><strong le>To:</strong> Ігор Лужанський</div>
+    <div class="hero-mi"><strong>FEEL Again</strong> · 18.04.2026 · v10</div>
+  </div>
 </div>
 
 <div class="page">
 
-<div class="conf">
-  <span lu>Стратегічна записка · Конфіденційно</span>
-  <span le>Strategic note · Confidential</span>
-  <span lu>FEEL Again · Квітень 2026</span>
-  <span le>FEEL Again · April 2026</span>
+<div class="topbar">
+  <span lu>Стратегічна аналітична записка</span>
+  <span le>Strategic analytical brief</span>
+  <span>FEEL Again × НБУ</span>
 </div>
-
-<div class="hdr" style="display:none;"></div>
 
 <div class="ct">
 
-<!-- ═══ I. СТРАТЕГІЧНИЙ КОНТЕКСТ ═══ -->
-<div class="section" style="padding-top:40px;">
-  <div class="logo-row" style="margin-bottom: 32px;">
-    <div class="logo-feel">FEEL <span>AGAIN</span></div>
-    <div class="logo-nbu">
-      <div class="nbu-badge">НБУ · NBU</div>
-      <div class="nbu-cap" lu>Національний банк України</div>
-      <div class="nbu-cap" le>National Bank of Ukraine</div>
-    </div>
+<!-- ═══ EXECUTIVE SUMMARY ═══ -->
+<div class="section">
+  <div class="sl"><span lu>Резюме</span><span le>Executive summary</span></div>
+  <h2 lu>Проблема в мандаті Департаменту — і інфраструктура, яка її закриває</h2>
+  <h2 le>A problem within the Department's mandate — and the infrastructure to close it</h2>
+
+  <p lu>Ціль 3 оновленої Стратегії НБУ (затверджена 26.06.2025) визначає: <em>«Фінансова система працює на відновлення країни та інтегрується в ЄС»</em>. Дві Хартії — Фінансової інклюзії ветеранів (38 банків, НБУ × ЄБРР) та Стійкості людського капіталу (HCR, Рим, липень 2025, 100+ компаній) — містять зобов'язання щодо ментального здоров'я. Жодна з них не має інфраструктури для вимірювання результатів.</p>
+  <p le>Goal 3 of the updated NBU Strategy (approved 26.06.2025) states: <em>"Financial system works for recovery and EU integration."</em> Two Charters — Veterans Financial Inclusion (38 banks, NBU × EBRD) and Human Capital Resilience (HCR, Rome, July 2025, 100+ companies) — contain mental health commitments. Neither has infrastructure to measure outcomes.</p>
+
+  <p lu>Програма FEEL Again — зрілий fintech-консорціум з $5M інвестицій — пропонує цифрову та фінансову інфраструктуру для сектору MHPSS. Не додатковий проєкт на фінансування, а SaaS-сервіс, який зменшує витрати, формалізує тіньовий ринок і створює перший у світі dataset зв'язку ментального здоров'я з ВВП через реальні фінансові потоки. Вартість для держави: $0 CAPEX.</p>
+  <p le>FEEL Again — a mature fintech consortium with $5M invested — offers digital and financial infrastructure for the MHPSS sector. Not another project seeking funding, but a SaaS service that cuts costs, formalises the shadow market, and creates the world's first dataset linking mental health to GDP through real financial flows. Cost to state: $0 CAPEX.</p>
+
+  <div class="g4">
+    <div class="st"><div class="st-n">3.9M</div><div class="st-u" lu>потребують допомоги</div><div class="st-u" le>need care</div><div class="st-l">Lancet 2023</div></div>
+    <div class="st"><div class="st-n">47–78M</div><div class="st-u" lu>сеансів / потреба</div><div class="st-u" le>sessions / need</div><div class="st-l">3.9M × 12–20 (WHO)</div></div>
+    <div class="st"><div class="st-n">74%</div><div class="st-u" lu>treatment gap ВПО</div><div class="st-u" le>IDP treatment gap</div><div class="st-l">WHO SIMH 2024</div></div>
+    <div class="st"><div class="st-n">~$8B</div><div class="st-u" lu>втрати ВВП / рік</div><div class="st-u" le>GDP loss / year</div><div class="st-l">~5% ВВП · OECD est.</div></div>
+  </div>
+</div>
+
+<hr class="hr">
+
+<!-- ═══ I. ЦІНА БЕЗДІЯЛЬНОСТІ ═══ -->
+<div class="section pb">
+  <div class="sl"><span lu>I · Ціна бездіяльності: ерозія спроможності</span><span le>I · Cost of inaction: capacity erosion</span></div>
+  <h2 lu>Щомісяця країна втрачає $5M спеціалістів — і множник соматизації збільшує реальну вартість у 3–5 разів</h2>
+  <h2 le>The country loses $5M in specialists monthly — and the somatisation multiplier increases real cost 3–5×</h2>
+
+  <div class="erosion">
+    <div class="erosion-label" lu>Ерозія спроможності</div>
+    <div class="erosion-label" le>Capacity erosion</div>
+    <div class="erosion-val" id="erosion-counter">$5,000,000</div>
+    <div class="erosion-sub" lu>щомісячні втрати фахового потенціалу</div>
+    <div class="erosion-sub" le>monthly specialist capacity loss</div>
+    <div class="erosion-formula">Formula: (4,000 + 8,000) × 20–40% lost time × $40–65/hr</div>
   </div>
 
-  <div class="sl"><span lu>I · Стратегічний контекст</span><span le>I · Strategic context</span></div>
-  <h2 lu>Завдання, які вже стоять перед Департаментом — і розрив, який поки нічим не закритий</h2>
-  <h2 le>Tasks already facing the Department — and the gap nothing yet covers</h2>
+  <p lu>Розрахунок базується на 4,000 клінічних психологів та 8,000 соціальних працівників у системі, з яких 20–40% робочого часу втрачається через відсутність цифрової інфраструктури: ручна звітність, дублювання даних, неможливість верифікації результатів. При середній вартості $40–65/годину ерозія складає приблизно $5M щомісяця.<span class="fn">[ASSUMPTION: conservative estimate based on NHSU registry data and WHO workforce mapping 2024]</span></p>
+  <p le>The calculation is based on 4,000 clinical psychologists and 8,000 social workers in the system, of whom 20–40% of working time is lost due to absent digital infrastructure: manual reporting, data duplication, inability to verify outcomes. At an average cost of $40–65/hour, erosion amounts to approximately $5M monthly.<span class="fn">[ASSUMPTION: conservative estimate based on NHSU registry data and WHO workforce mapping 2024]</span></p>
 
-  <p lu>Ціль 3 оновленої Стратегії НБУ (затверджена 26.06.2025) визначає: <em>«Фінансова система працює на відновлення країни та інтегрується в ЄС»</em>. Департамент стратегії та розвитку відповідає за моніторинг її реалізації, розвиток інновацій, впровадження ESG-принципів, управління портфелем стратегічних проектів і аналітичну підтримку Комітету з фінансового розвитку. FinTech Strategy 2025 включає пріоритет фінансової інклюзії та розробку комплексного regulatory sandbox.</p>
-  <p le>Goal 3 of the updated NBU Strategy (approved 26.06.2025) states: <em>"Financial system works for the country's recovery and integrates with the EU."</em> The Department of Strategy and Development is responsible for monitoring its implementation, innovation development, ESG principles, strategic project portfolio management, and analytical support for the Committee on Financial Development. FinTech Strategy 2025 prioritises financial inclusion and development of a comprehensive regulatory sandbox.</p>
+  <h3 lu>Множник соматизації: 3–5× реальна вартість</h3>
+  <h3 le>Somatisation multiplier: 3–5× real cost</h3>
 
-  <p lu>Одночасно діють дві Хартії: Хартія фінансової інклюзії ветеранів (38 банків-підписантів, НБУ × ЄБРР) та Хартія стійкості людського капіталу (HCR, Рим, липень 2025 — Метінвест, PrivatBank, DTEK, Нафтогаз, 100+ компаній). Обидві містять зобов'язання щодо ментального здоров'я. Обидві не мають інфраструктури для вимірювання результатів.</p>
-  <p le>Two Charters operate simultaneously: the Veterans Financial Inclusion Charter (38 signatory banks, NBU × EBRD) and the Human Capital Resilience Charter (HCR, Rome, July 2025 — Metinvest, PrivatBank, DTEK, Naftogaz, 100+ companies). Both contain mental health commitments. Neither has infrastructure to measure outcomes.</p>
+  <p lu>Нелікована травма не зникає — вона соматизується. За даними OECD Health at a Glance, пацієнти з нелікованими розладами психічного здоров'я генерують у 3–5 разів більше витрат загальної медицини: кардіологія, гастроентерологія, хронічний больовий синдром. Для України це означає, що реальна вартість бездіяльності — не $8B/рік, а $24–40B, якщо врахувати навантаження на загальну медичну систему.</p>
+  <p le>Untreated trauma does not disappear — it somatises. According to OECD Health at a Glance, patients with untreated mental health disorders generate 3–5× higher general medical costs: cardiology, gastroenterology, chronic pain. For Ukraine, this means the real cost of inaction is not $8B/year but $24–40B when accounting for the general healthcare burden.</p>
 
-  <p lu>Програма FEEL Again бачить комплементарність цих завдань з можливостями, які виникають на перетині гуманітарного та фінансового секторів. Ми — зрілий fintech-консорціум з $5M вже інвестованих, що пропонує конкретну інфраструктуру для закриття цього розриву — не додатковий проєкт на фінансування, а сервіс, який зменшує витрати і створює нові дані.</p>
-  <p le>FEEL Again sees the complementarity between these tasks and opportunities arising at the intersection of humanitarian and financial sectors. We are a mature fintech consortium with $5M already invested, offering concrete infrastructure to close this gap — not another project seeking funding, but a service that reduces costs and generates new data.</p>
+  <div class="ex">
+    <p lu><strong>$535M Світового банку</strong> (HEAL $50M + THRIVE $454M + undisbursed $80.7M) — виділені, але не рухаються. HEAL Component 4 = 0/4 індикаторів, закриття 23.12.2026. Кожен місяць наближає повернення коштів WB — удар по кредитній позиції країни. THRIVE (~$320M вже дисбурсовано станом на 03.2026) — DLI-trigger прив'язаний до запису в НСЗУ, який не працює через відсутність зв'язку KoBoToolbox → Трембіта → ЄСОЗ.</p>
+    <p le><strong>$535M World Bank</strong> (HEAL $50M + THRIVE $454M + undisbursed $80.7M) — allocated but stalled. HEAL Component 4 = 0/4 indicators, closing 23.12.2026. Every month moves closer to returning WB funds — a blow to the country's credit position. THRIVE (~$320M already disbursed as of 03.2026) — DLI trigger is tied to NHSU record, which fails because KoBoToolbox → Trembita → ЄСОЗ link is missing.</p>
+  </div>
 </div>
 
 <hr class="hr">
@@ -289,39 +291,35 @@ a:hover{opacity: 0.8; text-decoration:underline}
   <h2 lu>Чому це завдання фінансового характеру, а не тільки клінічного чи гуманітарного</h2>
   <h2 le>Why this is a financial task, not only clinical or humanitarian</h2>
 
-  <div class="g4">
-    <div class="st"><div class="st-n">3.9M</div><div class="st-u" lu>потребують допомоги</div><div class="st-u" le>need care</div><div class="st-l">Lancet 2023</div></div>
-    <div class="st"><div class="st-n">47–78M</div><div class="st-u" lu>сеансів / потреба</div><div class="st-u" le>sessions / need</div><div class="st-l">3.9M × 12–20 (WHO)</div></div>
-    <div class="st"><div class="st-n">74%</div><div class="st-u" lu>treatment gap ВПО</div><div class="st-u" le>IDP treatment gap</div><div class="st-l">WHO SIMH 2024</div></div>
-    <div class="st"><div class="st-n">~$8B</div><div class="st-u" lu>втрати ВВП / рік</div><div class="st-u" le>GDP loss / year</div><div class="st-l">~5% ВВП · OECD est.</div></div>
-  </div>
+  <p lu>Міжнародні організації оцінюють потребу в 3.9M осіб, кожна з яких потребує 12–20 сесій за стандартами WHO. Це 47–78 мільйонів сеансів. Реальний обсяг може бути більшим через кумулятивний ефект тривалого травмування. Але навіть ця оцінка залишається теоретичною — гуманітарні бази даних та ЄСОЗ між собою не пов'язані. Ця відсутність зв'язку блокує доступ до ресурсів Світового банку.</p>
+  <p le>International organisations estimate the need at 3.9M people, each requiring 12–20 sessions per WHO standards. That is 47–78 million sessions. Real volume may be higher due to cumulative sustained trauma. But even this estimate remains theoretical — humanitarian databases and state health registry ЄСОЗ are not linked. This disconnect blocks access to World Bank resources.</p>
 
-  <p lu>Міжнародні організації оцінюють потребу в 3.9M осіб, кожна з яких потребує 12–20 сесій низькоінтенсивної терапії за стандартами WHO. Це <strong>47–78 мільйонів сеансів</strong>. Реальний обсяг може бути більшим через кумулятивний ефект тривалого травмування та вторинну травматизацію (сім'ї, діти, медичний та соціальний персонал). Але навіть ця оцінка базується на стандартах міжнародних організацій — скільки насправді, невідомо нікому, бо гуманітарні бази даних та ЄСОЗ між собою не пов'язані. Саме ця відсутність зв'язку блокує доступ до ресурсів Світового банку.</p>
-  <p le>International organisations estimate the need at 3.9M people, each requiring 12–20 low-intensity therapy sessions per WHO standards. That is <strong>47–78 million sessions</strong>. The real volume may be higher due to cumulative effects of sustained trauma and secondary traumatisation (families, children, medical and social workers). But even this estimate is based on international standards — the true number is unknown because humanitarian databases and the state health registry ЄСОЗ are not linked. This disconnect is precisely what blocks access to World Bank resources.</p>
+  <h3 lu>Закон №12030: економічний аналіз</h3>
+  <h3 le>Law №12030: economic analysis</h3>
 
-  <h3 lu>Закон №12030 «Про систему охорони психічного здоров'я»: економічний аналіз</h3>
-  <h3 le>Law №12030 "On the Mental Health Care System": economic analysis</h3>
-
-  <p lu>Закон набув чинності 07.02.2026, обов'язкова сертифікація до 2031 року. Створює правову рамку — але економіка приватної практики не працює. Тариф НСЗУ ~850 грн/сеанс (з яких ~70% на медикаменти). Ринкова ціна приватної практики — $30–70/сеанс. Вимоги до ліцензування включають обладнання для фізіотерапії, конкретні параметри приміщення. При такій моделі витрати на створення робочого місця та утримання не окупаються тарифом НСЗУ.</p>
-  <p le>The law took effect on 07.02.2026; mandatory certification by 2031. It creates a legal framework — but the economics of private practice don't work. NHSU tariff ~850 UAH/session (of which ~70% goes to medications). Market price for private practice — $30–70/session. Licensing requires physiotherapy equipment and specific premises. Under this model, workplace setup and maintenance costs are not recoverable from the NHSU tariff.</p>
-
-  <p lu><strong>Прогнозований ефект:</strong> приватні заклади проведуть 1–2 сеанси у підзвітній зоні, потім вийдуть з неї. Фахівці, які не зможуть витримати тариф, або будуть працювати в тіні, або переїдуть в інші регіони. Реальних даних та об'єктивного розподілу ресурсів система не отримає. Проксі-показники («скільки центрів відкрито», «скільки людей навчено») не вимірюють реального впливу, який можливо виразити об'єктивно — наприклад, через повернення до роботи на рівні статистики Пенсійного фонду.</p>
-  <p le><strong>Predicted effect:</strong> private facilities will conduct 1–2 sessions within the reporting zone, then exit it. Specialists who can't sustain the tariff will either work in the shadow or relocate. The system will receive neither real data nor objective resource allocation. Proxy indicators ("how many centres opened", "how many people trained") don't measure real impact — which could be objectively expressed through return-to-work data from the Pension Fund.</p>
+  <p lu>Закон «Про систему охорони психічного здоров'я» набув чинності 07.02.2026, обов'язкова сертифікація до 2031 року. Правова рамка створена — але економіка не працює. Тариф НСЗУ ~850 грн/сеанс (з яких ~70% на медикаменти). Ринкова ціна приватної практики — $30–70/сеанс. Прогнозований ефект: приватні заклади проведуть 1–2 сеанси у підзвітній зоні, потім вийдуть. Система не отримає ні даних, ні контролю.</p>
+  <p le>The Mental Health Care System Law took effect 07.02.2026; mandatory certification by 2031. Legal framework created — but economics don't work. NHSU tariff ~850 UAH/session (~70% goes to medications). Private practice market price — $30–70/session. Predicted effect: private facilities will conduct 1–2 sessions in the reporting zone, then exit. The system receives neither data nor control.</p>
 
   <div class="ex">
-    <p lu><strong>Немає даних — немає контролю.</strong> WHO mhGAP online видав ~150,000 сертифікатів — кількість практикуючих не вимірюється. Supervised: 700 навчено, 42 практикують (6% конверсія). 89% державного бюджету MH йде в стаціонар; 71% пацієнтів потребують амбулаторної допомоги. Загальноукраїнська програма «Ти як?» (ініціатива першої леді): 228 центрів, 2.2M учасників. Робота значна — і рахунком доєднання зусиль з боку НБУ отримає контроль до тих зон перетину технологій, цифрового супроводу та цифрового відстеження, які лежать за периметром впливу координаційної ради КМУ — підсилюючи можливості ініціативи. Але без зняття показників на макрорівні з контролем кожної транзакції вимірювання реального впливу на здоров'я та економіку залишається поза можливостями системи.</p>
-    <p le><strong>No data — no control.</strong> WHO mhGAP online issued ~150,000 certificates — practitioner count not measured. Supervised: 700 trained, 42 practicing (6% conversion). 89% of state MH budget goes to inpatient; 71% of patients need outpatient. National programme "How Are You?" (First Lady's initiative): 228 centres, 2.2M participants. The work is significant — and by joining forces with NBU, it gains control over those zones at the intersection of technology, digital accompaniment and digital tracking that lie beyond the CMU coordination council's influence perimeter — strengthening the initiative's capabilities. But without macro-level measurement with per-transaction control, measuring real impact on health and GDP remains beyond the system's capabilities.</p>
+    <p lu><strong>Немає даних — немає контролю.</strong> WHO mhGAP online видав ~150,000 сертифікатів — кількість практикуючих не вимірюється. Supervised: 700 навчено, 42 практикують (6% конверсія). 89% державного бюджету MH — стаціонар; 71% пацієнтів потребують амбулаторної допомоги. Вісім цифрових систем працюють паралельно (ActivityInfo, HeRAMS, KoBoToolbox, DHIS2, eHealth/Helsi, Signpost, Healthvault, IOM DTM). Рівень автоматизованої синхронізації між гуманітарними даними та ЄСОЗ: близько 0%.<span class="fn">[Master v5.0, cross-verified WHO/WB/MoH]</span></p>
+    <p le><strong>No data — no control.</strong> WHO mhGAP online issued ~150,000 certificates — practitioner count not measured. Supervised: 700 trained, 42 practicing (6% conversion). 89% of state MH budget goes to inpatient; 71% of patients need outpatient. Eight digital systems operate in parallel (ActivityInfo, HeRAMS, KoBoToolbox, DHIS2, eHealth/Helsi, Signpost, Healthvault, IOM DTM). Automated synchronisation between humanitarian data and ЄСОЗ: approximately 0%.<span class="fn">[Master v5.0, cross-verified WHO/WB/MoH]</span></p>
   </div>
+
+  <h3 lu>«Ти як?»: потенціал, який потребує цифрової глибини</h3>
+  <h3 le>"How Are You?": potential requiring digital depth</h3>
+
+  <p lu>Загальноукраїнська програма «Ти як?» (ініціатива першої леді): 228 центрів, 2.2M учасників. Робота значна. Доєднання зусиль з боку НБУ надає контроль до тих зон перетину технологій, цифрового супроводу та відстеження, які лежать за периметром впливу координаційної ради КМУ — підсилюючи можливості ініціативи. Без зняття показників на макрорівні з контролем кожної транзакції вимірювання реального впливу на здоров'я та економіку залишається поза можливостями системи.</p>
+  <p le>The nationwide "How Are You?" programme (First Lady's initiative): 228 centres, 2.2M participants. The work is substantial. NBU's involvement provides control over technology, digital accompaniment, and tracking zones beyond the CMU coordination council's perimeter — strengthening the initiative. Without macro-level measurement with per-transaction control, measuring real health and GDP impact remains beyond the system's capabilities.</p>
 
   <h3 lu>Blended finance та outcome-based модель</h3>
   <h3 le>Blended finance and outcome-based model</h3>
 
-  <p lu>FEEL Again пропонує інноваційну фінансову модель дистрибуції гуманітарних ресурсів через банківську систему: депонування ресурсів на escrow, оплата тільки за верифікований результат (outcome-based release), фінансове відстеження кожної транзакції від мікроплатежу до макропоказника, трансграничні платежі на межі гуманітарних внесків з контрольованою звітністю, підключеною до міжнародних систем. Поточний overhead гуманітарних програм — 30%+. Модель blended finance знижує транзакційні витрати близько до нуля, бо будує прямі відносини між донором та виконавцем в інтересах бенефіціара.</p>
-  <p le>FEEL Again proposes an innovative financial model for distributing humanitarian resources through the banking system: resource escrow deposits, payment only for verified outcomes (outcome-based release), financial tracking of every transaction from micro-payment to macro-indicator, cross-border payments at the humanitarian-contribution boundary with controlled reporting connected to international systems. Current humanitarian overhead — 30%+. The blended finance model reduces transaction costs to near-zero by building direct donor-to-provider relationships in the beneficiary's interest.</p>
+  <p lu>Інфраструктура FEEL Again пропонує фінансову модель дистрибуції гуманітарних ресурсів через банківську систему: депонування ресурсів на escrow, оплата тільки за верифікований результат (outcome-based release), фінансове відстеження кожної транзакції від мікроплатежу до макропоказника. Поточний overhead гуманітарних програм — 30%+. Модель blended finance знижує транзакційні витрати, будуючи прямі відносини між донором та виконавцем в інтересах бенефіціара.</p>
+  <p le>FEEL Again infrastructure proposes a financial model for distributing humanitarian resources through the banking system: escrow deposits, payment only for verified outcomes (outcome-based release), financial tracking of every transaction from micro-payment to macro-indicator. Current humanitarian overhead — 30%+. The blended finance model reduces transaction costs by building direct donor-to-provider relationships in the beneficiary's interest.</p>
 
   <div class="hl">
-    <p lu><strong>Регресна модель SaaS-платежів:</strong> транзакційна комісія платформи складає 7% на старті (Platform ops 1.0% + Tech 0.5% + Compliance 0.5% + Reserve 0.5% + Development) і регресивно знижується до 3% при масштабуванні. Для порівняння: поточний overhead гуманітарних програм — 30%+. Донор фінансує транзакції, а не прогнози. Держава купує сервіс, а не сервери.</p>
-    <p le><strong>SaaS payment regression model:</strong> platform transaction fee starts at 7% (Platform ops 1.0% + Tech 0.5% + Compliance 0.5% + Reserve 0.5% + Development) and regressively decreases to 3% at scale. For comparison: current humanitarian overhead — 30%+. Donors fund transactions, not forecasts. The state buys a service, not servers.</p>
+    <p lu><strong>Регресна модель SaaS-платежів:</strong> транзакційна комісія платформи складає 7% на старті (Platform ops 1.0% + Tech 0.5% + Compliance 0.5% + Reserve 0.5% + Development) і регресивно знижується до 3% при масштабуванні. Поточний overhead гуманітарних програм — 30%+. Донор фінансує транзакції, а не прогнози. Держава купує сервіс, а не сервери.</p>
+    <p le><strong>SaaS payment regression model:</strong> platform transaction fee starts at 7% (Platform ops 1.0% + Tech 0.5% + Compliance 0.5% + Reserve 0.5% + Development) and regressively decreases to 3% at scale. Current humanitarian overhead — 30%+. Donors fund transactions, not forecasts. The state buys a service, not servers.</p>
   </div>
 </div>
 
@@ -329,200 +327,251 @@ a:hover{opacity: 0.8; text-decoration:underline}
 
 <!-- ═══ III. ЧОМУ САМЕ НБУ ═══ -->
 <div class="section pb">
-  <div class="sl"><span lu>III · Інституційна роль</span><span le>III · Institutional role</span></div>
-  <h2 lu>Чому саме НБУ — і чому жоден інший інститут не може закрити цей розрив</h2>
-  <h2 le>Why specifically NBU — and why no other institution can close this gap</h2>
+  <div class="sl"><span lu>III · Інституційна роль НБУ</span><span le>III · NBU's institutional role</span></div>
+  <h2 lu>Національний клірингхаус та регулятор ринку MHPSS</h2>
+  <h2 le>National Clearinghouse and MHPSS market regulator</h2>
 
-  <p lu>Сектор MHPSS потребує не ще одного координатора — він потребує дзеркала з об'єктивними показниками, що виходять за межі компетенцій клінічної та гуманітарної допомоги. Інституцію, здатну відобразити фрагментовані потоки даних та фінансового контролю в єдиній картині. НБУ — єдина інституція з таким набором можливостей одночасно:</p>
-  <p le>The MHPSS sector needs not another coordinator — it needs a mirror with objective indicators that go beyond the competencies of clinical and humanitarian aid. An institution capable of reflecting fragmented data flows and financial controls into a unified picture. NBU is the only institution with this combination of capabilities simultaneously:</p>
+  <p lu>Сектор MHPSS потребує не ще одного координатора — а дзеркала з об'єктивними показниками, що виходять за межі клінічної та гуманітарної компетенції. Інституцію, здатну відобразити фрагментовані потоки даних та фінансового контролю в єдиній картині. НБУ — єдина інституція з таким набором можливостей одночасно:</p>
+  <p le>The MHPSS sector needs not another coordinator — but a mirror with objective indicators beyond clinical and humanitarian competence. An institution capable of reflecting fragmented data flows and financial controls into a unified picture. NBU is the only institution with this combination simultaneously:</p>
 
   <div class="g2">
-    <div class="st" style="text-align:left;padding:20px">
+    <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>Custodian даних та ресурсів</h3>
       <h3 style="margin-top:0" le>Data and resource custodian</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Всі фінансові транзакції проходять через банківську систему. НБУ — природний зберігач деперсоніфікованих даних про обсяги, географію та ефективність потоків. Єдиний набір даних, що включає клінічні, гуманітарні та фінансові показники, може бути сформований тільки на цьому рівні.</p>
-      <p style="font-size:14px;margin-bottom:0" le>All financial transactions pass through the banking system. NBU is the natural custodian of depersonalised data on volumes, geography, and flow effectiveness. The only unified dataset combining clinical, humanitarian, and financial indicators can be formed only at this level.</p>
+      <p style="font-size:13.5px;margin-bottom:0" lu>Всі фінансові транзакції проходять через банківську систему. НБУ — природний зберігач деперсоніфікованих даних про обсяги, географію та ефективність потоків. Єдиний dataset, що включає клінічні, гуманітарні та фінансові показники, може бути сформований тільки на цьому рівні.</p>
+      <p style="font-size:13.5px;margin-bottom:0" le>All financial transactions pass through the banking system. NBU is the natural custodian of depersonalised data on volumes, geography, and flow effectiveness. The only unified dataset combining clinical, humanitarian, and financial indicators can be formed only at this level.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
-      <h3 style="margin-top:0" lu>Оцінка тіньового сектору</h3>
-      <h3 style="margin-top:0" le>Shadow sector assessment</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Реальний обсяг ринку MHPSS невідомий — ніхто не може навіть приблизно порахувати тінь, бо це не є зоною відповідальності жодного конкретного міністерства. НБУ має інструментарій для оцінки неформальних фінансових потоків і унікальну позицію для запуску цього процесу. Результати оцінки стануть підставою для законодавчих ініціатив.</p>
-      <p style="font-size:14px;margin-bottom:0" le>The real MHPSS market volume is unknown — nobody can even approximate the shadow, because this is not any specific ministry's responsibility. NBU has the toolkit for assessing informal financial flows and a unique position to initiate this process. Assessment results will form the basis for legislative initiatives.</p>
+    <div class="st" style="text-align:left;padding:16px">
+      <h3 style="margin-top:0" lu>Національний клірингхаус</h3>
+      <h3 style="margin-top:0" le>National Clearinghouse</h3>
+      <p style="font-size:13.5px;margin-bottom:0" lu>НБУ вже запустив СЕП з миттєвими платежами <10 сек (ISO 20022, SEPA-aligned, січень 2024). Ця інфраструктура дозволяє побудувати клірингхаус для MHPSS-транзакцій: від мікроплатежів за сеанси до макроагрегації для державної аналітики. Жоден інший інститут не має такої технічної бази.</p>
+      <p style="font-size:13.5px;margin-bottom:0" le>NBU has already launched SEP with instant payments <10 sec (ISO 20022, SEPA-aligned, January 2024). This infrastructure enables building a clearinghouse for MHPSS transactions: from micro-payments per session to macro-aggregation for state analytics. No other institution has this technical base.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
-      <h3 style="margin-top:0" lu>Скоринг, індекс, white-label інфраструктура</h3>
-      <h3 style="margin-top:0" le>Scoring, index, white-label infrastructure</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>НБУ вже є архітектором скорингової моделі для Хартії ветеранів. Розширення на MHPSS-compliance — природне продовження. Mental Health Economic Index (вплив MH на ВВП через транзакційні дані) — інструмент, якого не має жоден центробанк світу. Цифрова інфраструктура може бути надана банкам на умовах white-label.</p>
-      <p style="font-size:14px;margin-bottom:0" le>NBU is already the architect of the veterans Charter scoring model. Extending to MHPSS compliance is natural. Mental Health Economic Index (MH impact on GDP via transaction data) — an instrument no central bank in the world possesses. Digital infrastructure can be provided to banks as white-label.</p>
+    <div class="st" style="text-align:left;padding:16px">
+      <h3 style="margin-top:0" lu>Оцінка тіньового сектору та ринку</h3>
+      <h3 style="margin-top:0" le>Shadow sector and market assessment</h3>
+      <p style="font-size:13.5px;margin-bottom:0" lu>Реальний обсяг ринку MHPSS невідомий. Оцінка: 5,000–15,000 практикуючих поза формальними системами. Глобальний ринок MH payment services: $4.54B (2025) → $14.08B (2035), CAGR 11.98%. НБУ має інструментарій для оцінки неформальних фінансових потоків — результати стануть підставою для законодавчих ініціатив.</p>
+      <p style="font-size:13.5px;margin-bottom:0" le>Real MHPSS market volume is unknown. Estimate: 5,000–15,000 practitioners outside formal systems. Global MH payment services market: $4.54B (2025) → $14.08B (2035), CAGR 11.98%. NBU has the toolkit for assessing informal financial flows — results will form the basis for legislative initiatives.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
+    <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>Законодавча ініціатива та конвергенція</h3>
       <h3 style="margin-top:0" le>Legislative initiative and convergence</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>НБУ має пряме право законодавчої ініціативи у Верховній Раді (ст. 93 Конституції). Після оцінки тіньового сектору — рамку «буде такий тариф, знадобиться такий ресурс, можемо збалансувати таким чином» — НБУ може надати іншим міністерствам (МОЗ, Мінсоцполітики, Мінфін) доказову базу для змін до законодавства. НБУ задає політики, стандарти, запобіжники — і виконує конвергенцію технологій.</p>
-      <p style="font-size:14px;margin-bottom:0" le>NBU has direct legislative initiative in the Verkhovna Rada (Art. 93 Constitution). After shadow sector assessment — the framework "this tariff will apply, this resource will be needed, balance achievable this way" — NBU can provide other ministries (MoH, MinSocialPolicy, MinFin) with the evidence base for legislative changes. NBU sets policies, standards, safeguards — and executes technology convergence.</p>
+      <p style="font-size:13.5px;margin-bottom:0" lu>НБУ має пряме право законодавчої ініціативи (ст. 93 Конституції). Після оцінки тіньового сектору — рамку «тариф, ресурс, баланс» — НБУ може надати МОЗ, Мінсоцполітики, Мінфіну доказову базу для змін до законодавства. НБУ задає політики, стандарти, запобіжники — і виконує конвергенцію технологій.</p>
+      <p style="font-size:13.5px;margin-bottom:0" le>NBU has direct legislative initiative (Art. 93 Constitution). After shadow sector assessment — the "tariff, resource, balance" framework — NBU can provide MoH, MinSocialPolicy, MinFin with the evidence base for legislative changes. NBU sets policies, standards, safeguards — and executes technology convergence.</p>
     </div>
   </div>
-
-  <p lu>Додатково: інституалізація фонду між банками-підписантами Хартії для координованого фінансування MHPSS-сервісів, взаємодія з ЄБРР (€250M Veterans Reintegration windows), участь у координаційній раді Health Cluster при КМУ з позиції фінансових даних.</p>
-  <p le>Additionally: institutionalisation of a fund among Charter-signatory banks for coordinated MHPSS funding, interaction with EBRD (€250M Veterans Reintegration windows), participation in the Health Cluster Coordination Council at the Cabinet level from a financial data position.</p>
 </div>
 
 <hr class="hr">
 
-<!-- ═══ IV. ЄДИНИЙ ЛАНЦЮГ ═══ -->
+<!-- ═══ IV. QUICK WINS ═══ -->
 <div class="section pb">
-  <div class="sl"><span lu>IV · Єдиний ланцюг реалізації</span><span le>IV · Single implementation chain</span></div>
-  <h2 lu>Одна послідовність, де кожний крок підсилює наступний</h2>
-  <h2 le>One sequence where each step reinforces the next</h2>
+  <div class="sl"><span lu>IV · Quick wins для Департаменту стратегії</span><span le>IV · Quick wins for the Strategy Department</span></div>
+  <h2 lu>Обґрунтування через швидкі результати</h2>
+  <h2 le>Justification through rapid deliverables</h2>
 
-  <p lu>Не меню ініціатив на вибір — а єдиний ланцюг, де результат попереднього етапу стає підставою для наступного. Галузевий проєкт слугує модельним на шляху створення високодохідного сектору ринку.</p>
-  <p le>Not a menu of initiatives to choose from — a single chain where each stage's result becomes the basis for the next. The sectoral project serves as a model on the path to building a high-yield market sector.</p>
+  <p lu>Кожен із наступних елементів може бути реалізований без тривалого узгодження і дає вимірюваний результат для Департаменту:</p>
+  <p le>Each of the following can be delivered without prolonged approvals and provides a measurable result for the Department:</p>
+
+  <div class="acc-header" onclick="toggleAcc(this)">
+    <h3 style="margin:0" lu>1. Оцінка обсягу ринку MHPSS (2–3 міс.)</h3>
+    <h3 style="margin:0" le>1. MHPSS market volume assessment (2–3 mo.)</h3>
+    <span class="acc-arrow">▸</span>
+  </div>
+  <div class="acc-body"><div class="acc-inner">
+    <p lu>Методологія обчислення неформальних потоків у секторі ментального здоров'я. Жоден інститут цього не робив. Результат: перший об'єктивний вимір тіньового ринку MHPSS в Україні (оцінка: 5,000–15,000 ФОП, $200–300M SAM). Підстава для законодавчих змін щодо виведення з тіні та регулювання тарифів. Для НБУ — підсилення позиції в діалозі з ЄБРР та WB.</p>
+    <p le>Methodology for computing informal flows in the mental health sector. No institution has done this. Result: first objective measurement of the shadow MHPSS market in Ukraine (estimate: 5,000–15,000 sole proprietors, $200–300M SAM). Basis for legislative changes on shadow-sector formalisation and tariff regulation. For NBU — strengthened position in EBRD and WB dialogue.</p>
+  </div></div>
+
+  <div class="acc-header" onclick="toggleAcc(this)">
+    <h3 style="margin:0" lu>2. Регресний dataset з КНУ Шевченка (3–4 міс.)</h3>
+    <h3 style="margin:0" le>2. Regression dataset with KNU Shevchenko (3–4 mo.)</h3>
+    <span class="acc-arrow">▸</span>
+  </div>
+  <div class="acc-body"><div class="acc-inner">
+    <p lu>Перший у світі регресний dataset — 10 років даних війни, кореляція між показниками ментального здоров'я та макроекономічними індикаторами. Партнер: КНУ ім. Шевченка (Centre of Excellence). Методологія: вплив MH на ВВП через транзакційні дані. Для НБУ — унікальний інтелектуальний актив: жоден центробанк світу не має аналогу.</p>
+    <p le>World's first regression dataset — 10 years of war data, correlation between mental health indicators and macroeconomic indicators. Partner: Kyiv National University (Centre of Excellence). Methodology: MH-to-GDP impact through transaction data. For NBU — unique intellectual asset: no central bank in the world has an analogue.</p>
+  </div></div>
+
+  <div class="acc-header" onclick="toggleAcc(this)">
+    <h3 style="margin:0" lu>3. Розробка індексів та показників (3–4 міс.)</h3>
+    <h3 style="margin:0" le>3. Index and indicator development (3–4 mo.)</h3>
+    <span class="acc-arrow">▸</span>
+  </div>
+  <div class="acc-body"><div class="acc-inner">
+    <p lu>Композитний індекс готовності регіону до повернення ветеранів; Mental Health Economic Index — вплив MH на ВВП. Критерій вірогідності виконання кредитних договорів ветеранами. 24 області — змагання за індекс ментального добробуту. Структура дашбордів для публічного контролю.</p>
+    <p le>Composite regional veteran-return readiness index; Mental Health Economic Index — MH impact on GDP. Criterion for veteran credit contract performance probability. 24 regions competing for mental wellbeing index. Dashboard structures for public control.</p>
+  </div></div>
+
+  <div class="acc-header" onclick="toggleAcc(this)">
+    <h3 style="margin:0" lu>4. Макроекономічна параметрична модель (4–6 міс.)</h3>
+    <h3 style="margin:0" le>4. Macroeconomic parametric model (4–6 mo.)</h3>
+    <span class="acc-arrow">▸</span>
+  </div>
+  <div class="acc-body"><div class="acc-inner">
+    <p lu>Модель для policy levers: «якщо інвестувати X у амбулаторну допомогу — зниження соматизації = Y, повернення до роботи = Z, вплив на ВВП = W». Параметри: тариф НСЗУ, кількість сеансів, конверсія навчених у практикуючих, охоплення тіньового сектору. Дозволяє НБУ та КМУ моделювати сценарії та порівнювати ефективність різних інвестиційних стратегій у ментальне здоров'я.</p>
+    <p le>Model for policy levers: "if investing X in outpatient care — somatisation reduction = Y, return to work = Z, GDP impact = W". Parameters: NHSU tariff, session count, trained-to-practicing conversion, shadow sector coverage. Enables NBU and Cabinet to model scenarios and compare effectiveness of different mental health investment strategies.</p>
+  </div></div>
+
+  <div class="teal-box">
+    <h3 lu>Стартовий кейс: KoBoToolbox з мобільних бригад</h3>
+    <h3 le>Starting case: KoBoToolbox from mobile brigades</h3>
+    <p lu>Найшвидший quick win з максимальним leverage: підключення KoBoToolbox (гуманітарна звітність мобільних бригад) до Трембіти → ЄСОЗ. Саме ця відсутня ланка блокує DLI-trigger THRIVE ($454M) і заморожує платежі за Component 4 HEAL ($50M). Реалізація розблоковує вже виділені кошти Світового банку — без додаткових бюджетних витрат.</p>
+    <p le>The fastest quick win with maximum leverage: connecting KoBoToolbox (mobile brigade humanitarian reporting) to Trembita → ЄСОЗ. This missing link blocks the THRIVE DLI trigger ($454M) and freezes HEAL Component 4 payments ($50M). Implementation unlocks already-allocated World Bank funds — at zero additional budget cost.</p>
+  </div>
+</div>
+
+<hr class="hr">
+
+<!-- ═══ V. ЄДИНИЙ ЛАНЦЮГ ═══ -->
+<div class="section pb">
+  <div class="sl"><span lu>V · Єдиний ланцюг реалізації</span><span le>V · Single implementation chain</span></div>
+  <h2 lu>Від аналітичної записки до національної інфраструктури</h2>
+  <h2 le>From analytical brief to national infrastructure</h2>
+
+  <p lu>Не меню ініціатив на вибір — а єдиний ланцюг, де результат попереднього етапу стає підставою для наступного:</p>
+  <p le>Not a menu of initiatives to choose from — a single chain where each stage's result becomes the basis for the next:</p>
 
   <div class="chain">
     <div class="chain-step">
       <div class="ch-title" lu>Оцінка обсягів тіньового сектору MHPSS</div>
       <div class="ch-title" le>Shadow MHPSS sector volume assessment</div>
-      <div class="ch-desc" lu>Методологія обчислення неформальних потоків. Ніхто цього не робив — результат стане першим об'єктивним виміром. Підстава для законодавчих змін щодо виведення з тіні та регулювання тарифів.</div>
-      <div class="ch-desc" le>Methodology for computing informal flows. Nobody has done this — the result becomes the first objective measurement. Basis for legislative changes on shadow-sector formalisation and tariff regulation.</div>
+      <div class="ch-desc" lu>Методологія обчислення неформальних потоків. Перший об'єктивний вимір. Підстава для законодавчих змін.</div>
+      <div class="ch-desc" le>Methodology for informal flows. First objective measurement. Basis for legislative changes.</div>
       <span class="ch-horizon hz-q" lu>Quick win · 2–3 міс.</span><span class="ch-horizon hz-q" le>Quick win · 2–3 mo.</span>
     </div>
     <div class="chain-step">
-      <div class="ch-title" lu>Розробка індексів та показників</div>
-      <div class="ch-title" le>Index and indicator development</div>
-      <div class="ch-desc" lu>Композитний індекс готовності регіону до повернення ветеранів; прогрес реінтеграції — об'єктивними показниками. MH Index прив'язаний до впливу на ВВП. Критерій вірогідності виконання кредитних договорів ветеранами.</div>
-      <div class="ch-desc" le>Composite index of regional readiness for veteran return; reintegration measured objectively. MH Index linked to GDP impact. Criterion for veteran credit contract performance probability.</div>
+      <div class="ch-title" lu>Регресний dataset та індекси</div>
+      <div class="ch-title" le>Regression dataset and indices</div>
+      <div class="ch-desc" lu>10 років даних з КНУ Шевченка. MH Economic Index. Композитний індекс готовності регіону.</div>
+      <div class="ch-desc" le>10 years of data with KNU Shevchenko. MH Economic Index. Composite regional readiness index.</div>
       <span class="ch-horizon hz-q" lu>Quick win · 3–4 міс.</span><span class="ch-horizon hz-q" le>Quick win · 3–4 mo.</span>
     </div>
     <div class="chain-step">
       <div class="ch-title" lu>Regulatory sandbox (ДПП / ДСП)</div>
       <div class="ch-title" le>Regulatory sandbox (PPP / PSP)</div>
-      <div class="ch-desc" lu>Акселератор появи необхідного сервісу для держави без додаткових витрат. ДПС-партнерство за стандартами комплаєнсу. Пісочниця — відпрацювання взаємозв'язків з Мінфіном, МОЗ, НСЗУ, Мінекономрозвитку.</div>
-      <div class="ch-desc" le>Accelerator for deploying a state-needed service at zero cost. PPS partnership built to compliance standards. The sandbox — working out interdependencies with MinFin, MoH, NHSU, MinEconomy.</div>
+      <div class="ch-desc" lu>Акселератор сервісу для держави без CAPEX. Пісочниця НБУ (Постанова №39/2023). Відпрацювання взаємозв'язків з Мінфіном, МОЗ, НСЗУ.</div>
+      <div class="ch-desc" le>State-needed service accelerator at zero CAPEX. NBU sandbox (Resolution №39/2023). Working out interdependencies with MinFin, MoH, NHSU.</div>
       <span class="ch-horizon hz-m" lu>Середньостроково · 4–8 міс.</span><span class="ch-horizon hz-m" le>Mid-term · 4–8 mo.</span>
     </div>
     <div class="chain-step">
       <div class="ch-title" lu>Галузева модель: Train-for-Care + цифрова шина</div>
       <div class="ch-title" le>Sectoral model: Train-for-Care + digital bus</div>
-      <div class="ch-desc" lu>20 фахівців у відділеннях банків-підписантів Хартії. Цифрова шина (FHIR R4): KoBoToolbox → Трембіта → ЄСОЗ → НСЗУ. Єдиний dataset клінічних, гуманітарних та фінансових даних. DLI-trigger THRIVE починає працювати.</div>
-      <div class="ch-desc" le>20 specialists in Charter-signatory bank branches. Digital bus (FHIR R4): KoBoToolbox → Trembita → ЄСОЗ → NHSU. Unified dataset of clinical, humanitarian and financial data. THRIVE DLI triggers start working.</div>
+      <div class="ch-desc" lu>20 фахівців у банках-підписантах Хартії. FHIR R4: KoBoToolbox → Трембіта → ЄСОЗ → НСЗУ. DLI-trigger THRIVE починає працювати.</div>
+      <div class="ch-desc" le>20 specialists in Charter-signatory banks. FHIR R4: KoBoToolbox → Trembita → ЄСОЗ → NHSU. THRIVE DLI triggers start working.</div>
       <span class="ch-horizon hz-m" lu>Середньостроково · 6–12 міс.</span><span class="ch-horizon hz-m" le>Mid-term · 6–12 mo.</span>
     </div>
     <div class="chain-step">
-      <div class="ch-title" lu>Дашборд та єдиний dataset відкритих даних</div>
-      <div class="ch-title" le>Dashboard and unified open dataset</div>
-      <div class="ch-desc" lu>Деперсоніфіковані дані для прозорості ресурсів. Від мікроплатежів до макропоказників — щоб міністерства могли оцінювати вплив на ВВП.</div>
-      <div class="ch-desc" le>Depersonalised data for resource transparency. From micro-payments to macro-indicators — so ministries can assess GDP impact.</div>
+      <div class="ch-title" lu>Дашборд та єдиний dataset</div>
+      <div class="ch-title" le>Dashboard and unified dataset</div>
+      <div class="ch-desc" lu>Деперсоніфіковані дані для прозорості. Від мікроплатежів до макропоказників.</div>
+      <div class="ch-desc" le>Depersonalised data for transparency. From micro-payments to macro-indicators.</div>
       <span class="ch-horizon hz-m" lu>Середньостроково · паралельно</span><span class="ch-horizon hz-m" le>Mid-term · parallel</span>
     </div>
     <div class="chain-step">
       <div class="ch-title" lu>Пакет для КМУ → координаційна рада</div>
       <div class="ch-title" le>Cabinet package → coordination council</div>
-      <div class="ch-desc" lu>Перевірене рішення з sandbox з показниками та цифровим контролем банківського рівня. Представлення на координаційній раді. Рішення, вже відпрацьоване у галузевому форматі.</div>
-      <div class="ch-desc" le>Proven sandbox solution with indicators and bank-grade digital control. Presentation to coordination council. Solution already proven in a sectoral format.</div>
+      <div class="ch-desc" lu>Перевірене рішення з sandbox з показниками банківського рівня контролю.</div>
+      <div class="ch-desc" le>Proven sandbox solution with bank-grade digital control indicators.</div>
       <span class="ch-horizon hz-l" lu>Довгостроково · 12–18 міс.</span><span class="ch-horizon hz-l" le>Long-term · 12–18 mo.</span>
     </div>
     <div class="chain-step">
-      <div class="ch-title" lu>Соціальні бонди та національне масштабування</div>
-      <div class="ch-title" le>Social bonds and national scale-up</div>
-      <div class="ch-desc" lu>Випуск соціальних бондів з фінансовим контролем від мікроплатежів до макропоказників. Перехід від sandbox до національного розгортання. Збереження суверенності даних.</div>
-      <div class="ch-desc" le>Social bonds with financial control from micro-payments to macro-indicators. Transition from sandbox to national deployment. Data sovereignty preserved.</div>
+      <div class="ch-title" lu>Соціальні бонди та масштабування</div>
+      <div class="ch-title" le>Social bonds and scale-up</div>
+      <div class="ch-desc" lu>Випуск соціальних бондів. Перехід від sandbox до національного розгортання. Суверенність даних.</div>
+      <div class="ch-desc" le>Social bond issuance. Transition from sandbox to national deployment. Data sovereignty.</div>
       <span class="ch-horizon hz-l" lu>Довгостроково · 18–36 міс.</span><span class="ch-horizon hz-l" le>Long-term · 18–36 mo.</span>
     </div>
     <div class="chain-step">
       <div class="ch-title" lu>Експорт моделі</div>
       <div class="ch-title" le>Model export</div>
-      <div class="ch-desc" lu>Модель, відпрацьована в Україні в умовах війни, стає SaaS-продуктом для інших країн. Для НБУ — інтелектуальний актив та важіль у діалозі з МФІ.</div>
-      <div class="ch-desc" le>The model proven in Ukraine under wartime becomes a SaaS product for other countries. For NBU — an intellectual asset and leverage in MFI dialogue.</div>
+      <div class="ch-desc" lu>Модель, відпрацьована в умовах війни, стає SaaS-продуктом для інших країн. Інтелектуальний актив НБУ.</div>
+      <div class="ch-desc" le>The wartime-proven model becomes a SaaS product for other countries. NBU's intellectual asset.</div>
       <span class="ch-horizon hz-l" lu>Горизонт · 36+ міс.</span><span class="ch-horizon hz-l" le>Horizon · 36+ mo.</span>
     </div>
   </div>
 
-  <p lu>Grand Bargain 2023–2026 (71 підписант) визначає локалізацію як пріоритет. Гуманітарний reset Тома Флетчера (OCHA, березень 2025) підсилює цей напрям. Загальний індикативний бюджет гуманітарних ресурсів для України може оцінюватись у $2.5–4B+ — обсяг достатній для побудови сектору приватних надавачів послуг. Модель FEEL Again дозволяє Україні запропонувати локалізаційну інновацію, яка перевершує поточні зобов'язання Grand Bargain: пряме проникнення ресурсів підписантів до конкретних регіонів, конкретних банківських відділень, конкретних ветеранів та їхніх сімей.</p>
-  <p le>Grand Bargain 2023–2026 (71 signatories) defines localisation as a priority. Tom Fletcher's humanitarian reset (OCHA, March 2025) reinforces this. The total indicative humanitarian budget for Ukraine may be estimated at $2.5–4B+ — sufficient for building a private provider sector. The FEEL Again model allows Ukraine to propose a localisation innovation exceeding current Grand Bargain commitments: direct resource penetration from signatories to specific regions, specific bank branches, specific veterans and their families.</p>
+  <p lu>Grand Bargain 2023–2026 (71 підписант) визначає локалізацію як пріоритет. Гуманітарний reset Тома Флетчера (OCHA, березень 2025) підсилює цей напрям. Загальний індикативний бюджет гуманітарних ресурсів для України — $2.5–4B+. Інфраструктура FEEL Again дозволяє Україні запропонувати локалізаційну інновацію: пряме проникнення ресурсів підписантів до конкретних регіонів, конкретних банківських відділень, конкретних ветеранів та їхніх сімей.</p>
+  <p le>Grand Bargain 2023–2026 (71 signatories) defines localisation as a priority. Tom Fletcher's humanitarian reset (OCHA, March 2025) reinforces this. Ukraine's total indicative humanitarian budget — $2.5–4B+. FEEL Again infrastructure enables Ukraine to propose a localisation innovation: direct resource penetration from signatories to specific regions, bank branches, veterans and families.</p>
 </div>
 
 <hr class="hr">
 
-<!-- ═══ V. РИЗИКИ ═══ -->
+<!-- ═══ VI. РИЗИКИ ═══ -->
 <div class="section pb">
-  <div class="sl"><span lu>V · Ризики та ціна бездіяльності</span><span le>V · Risks and cost of inaction</span></div>
+  <div class="sl"><span lu>VI · Ризики бездіяльності</span><span le>VI · Inaction risks</span></div>
 
   <div class="warn">
-    <p lu><strong>$535M Світового банку</strong> (HEAL $50M + THRIVE $454M + undisbursed $80.7M) — виділені, але не рухаються. HEAL Component 4 = 0/4 індикаторів, закриття 23.12.2026. Кожен місяць — це місяць ближче до повернення коштів WB. Повернення — удар по кредитній позиції країни.</p>
-    <p le><strong>$535M World Bank</strong> (HEAL $50M + THRIVE $454M + undisbursed $80.7M) — allocated but not moving. HEAL Component 4 = 0/4 indicators, closing 23.12.2026. Every month is a month closer to returning WB funds. Return — a blow to the country's credit position.</p>
+    <p lu><strong>$535M Світового банку</strong> — виділені, але не рухаються. HEAL Component 4 = 0/4 індикаторів, закриття 23.12.2026. Повернення коштів — удар по кредитній позиції країни.</p>
+    <p le><strong>$535M World Bank</strong> — allocated but stalled. HEAL Component 4 = 0/4 indicators, closing 23.12.2026. Fund return — a blow to the country's credit position.</p>
   </div>
 
   <div class="warn">
-    <p lu><strong>Закон №12030</strong> створює передумови для відтоку даних: приватні заклади виходять із підзвітної зони після 1–2 сеансів. Тіньовий сектор зростає. Без інфраструктури для зв'язку між гуманітарними та державними базами реальних даних не буде — а без даних не буде ні контролю, ні ресурсів.</p>
-    <p le><strong>Law №12030</strong> creates conditions for data leakage: private facilities exit the reporting zone after 1–2 sessions. The shadow sector grows. Without infrastructure linking humanitarian and state databases, there will be no real data — and without data, neither control nor resources.</p>
+    <p lu><strong>Закон №12030</strong> створює передумови для відтоку даних: приватні заклади виходять із підзвітної зони після 1–2 сеансів. Тіньовий сектор зростає. Без інфраструктури для зв'язку баз даних — ні контролю, ні ресурсів.</p>
+    <p le><strong>Law №12030</strong> creates conditions for data leakage: private facilities exit reporting after 1–2 sessions. Shadow sector grows. Without database linkage infrastructure — neither control nor resources.</p>
   </div>
 
   <div class="warn">
-    <p lu><strong>Хартії без інфраструктури</strong> залишаються деклараціями. 38 банків підписали зобов'язання — але без вимірювання результатів compliance стає формальністю. ЄБРР €250M Veterans Reintegration — конкурентна перевага для того, хто першим інтегрує MHPSS-інфраструктуру.</p>
-    <p le><strong>Charters without infrastructure</strong> remain declarations. 38 banks signed commitments — but without outcome measurement, compliance becomes a formality. EBRD €250M Veterans Reintegration — competitive advantage for whoever integrates MHPSS infrastructure first.</p>
-  </div>
-
-  <div class="warn">
-    <p lu><strong>Grand Bargain reset</strong> без локалізаційної моделі — Україна втрачає позицію у формуванні нового стандарту гуманітарної допомоги. Кумулятивний ефект від стійкого травмування тільки зростатиме.</p>
-    <p le><strong>Grand Bargain reset</strong> without a localisation model — Ukraine loses its position in shaping the new humanitarian aid standard. The cumulative effect of sustained trauma will only grow.</p>
+    <p lu><strong>Хартії без інфраструктури</strong> залишаються деклараціями. 38 банків підписали зобов'язання. ЄБРР €250M Veterans Reintegration — конкурентна перевага для того, хто першим інтегрує MHPSS-інфраструктуру.</p>
+    <p le><strong>Charters without infrastructure</strong> remain declarations. 38 banks signed commitments. EBRD €250M Veterans Reintegration — competitive advantage for first MHPSS infrastructure integrator.</p>
   </div>
 </div>
 
 <hr class="hr">
 
-<!-- ═══ VI. БЕНЕФІТИ ═══ -->
+<!-- ═══ VII. БЕНЕФІТИ ═══ -->
 <div class="section pb">
-  <div class="sl"><span lu>VI · Стратегічні бенефіти</span><span le>VI · Strategic benefits</span></div>
-  <h2 lu>Що отримують стейкхолдери</h2>
-  <h2 le>What stakeholders gain</h2>
+  <div class="sl"><span lu>VII · Стратегічні бенефіти</span><span le>VII · Strategic benefits</span></div>
+  <h2 lu>Результати для стейкхолдерів</h2>
+  <h2 le>Stakeholder outcomes</h2>
 
   <div class="g2">
-    <div class="st" style="text-align:left;padding:20px">
+    <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>НБУ</h3><h3 style="margin-top:0" le>NBU</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Виконання Цілі 3 Стратегії через конкретний проєкт. Інструмент діалогу з WB, ЄБРР, МВФ (MH Economic Index — SaaS для експорту). Репутаційний актив: перший центробанк з об'єктивним виміром впливу MH на ВВП. Реалізація мандату з інновацій та ESG. Доказова база для законодавчих ініціатив.</p>
-      <p style="font-size:14px;margin-bottom:0" le>Delivery on Strategy Goal 3 through a concrete project. Instrument for WB, EBRD, IMF dialogue (MH Economic Index — SaaS for export). Reputational asset: first central bank with objective MH-to-GDP impact measurement. Innovation and ESG mandate delivery. Evidence base for legislative initiatives.</p>
+      <p style="font-size:14px;margin-bottom:0" lu>Виконання Цілі 3 Стратегії. MH Economic Index — SaaS для експорту. Перший центробанк з об'єктивним виміром впливу MH на ВВП. Доказова база для законодавчих ініціатив. Реалізація мандату з інновацій та ESG.</p>
+      <p style="font-size:14px;margin-bottom:0" le>Strategy Goal 3 delivery. MH Economic Index — SaaS for export. First central bank with objective MH-to-GDP measurement. Evidence base for legislative initiatives. Innovation and ESG mandate delivery.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
+    <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>Банківська система</h3><h3 style="margin-top:0" le>Banking system</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Формалізація тіньового високодохідного сектору → нові клієнти-ФОП. Compliance з Хартією через ready-made KPI. $0 CAPEX (SaaS-сервіс). Конкурентна перевага у скорингу ЄБРР. Мікротранзакційний потік. ESG-звітність для міжнародних партнерів.</p>
-      <p style="font-size:14px;margin-bottom:0" le>Shadow high-yield sector formalisation → new sole-proprietor clients. Charter compliance via ready-made KPIs. $0 CAPEX (SaaS service). Competitive advantage in EBRD scoring. Micro-transaction flow. ESG reporting for international partners.</p>
+      <p style="font-size:14px;margin-bottom:0" lu>Формалізація тіньового сектору → нові клієнти-ФОП. Compliance з Хартією через ready-made KPI. $0 CAPEX (SaaS). Конкурентна перевага у скорингу ЄБРР. ESG-звітність.</p>
+      <p style="font-size:14px;margin-bottom:0" le>Shadow sector formalisation → new sole-proprietor clients. Charter compliance via ready-made KPIs. $0 CAPEX (SaaS). EBRD scoring competitive advantage. ESG reporting.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
-      <h3 style="margin-top:0" lu>Українці — бенефіціари, клієнти, пацієнти</h3><h3 style="margin-top:0" le>Ukrainians — beneficiaries, clients, patients</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Доступність послуг незалежно від гонорару через blended finance. Цифровий супровід на єдиному шляху бенефіціар → клієнт → пацієнт. Гідність отримання допомоги. Зворотний зв'язок від бенефіціара до донора (AAP). Скорочення адміністративного навантаження на 70% — більше часу фахівця на пацієнта.</p>
-      <p style="font-size:14px;margin-bottom:0" le>Service accessibility regardless of fee through blended finance. Digital accompaniment along the beneficiary → client → patient pathway. Dignity of receiving care. Beneficiary-to-donor feedback loop (AAP). 70% reduction in admin burden — more specialist time per patient.</p>
+    <div class="st" style="text-align:left;padding:16px">
+      <h3 style="margin-top:0" lu>Українці</h3><h3 style="margin-top:0" le>Ukrainians</h3>
+      <p style="font-size:14px;margin-bottom:0" lu>Доступність послуг через blended finance. Цифровий супровід бенефіціар → клієнт → пацієнт. Скорочення адміністративного навантаження на 70%. Зворотний зв'язок від бенефіціара до донора.</p>
+      <p style="font-size:14px;margin-bottom:0" le>Service access through blended finance. Digital accompaniment beneficiary → client → patient. 70% admin burden reduction. Beneficiary-to-donor feedback loop.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
+    <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>МОЗ / НСЗУ</h3><h3 style="margin-top:0" le>MoH / NHSU</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Доказова база для перегляду тарифів Закону №12030. Наскрізні показники впливу на здоров'я через фінансові дані (повернення до роботи, зниження симптомів). DLI-trigger для THRIVE ($454M) — НСЗУ запис працює. Підключення KoBoToolbox → Трембіта → ЄСОЗ закриває головний gap для Світового банку.</p>
-      <p style="font-size:14px;margin-bottom:0" le>Evidence base for Law №12030 tariff revision. End-to-end health impact indicators via financial data (return to work, symptom reduction). DLI trigger for THRIVE ($454M) — NHSU record works. KoBoToolbox → Trembita → ЄСОЗ connection closes the key World Bank gap.</p>
+      <p style="font-size:14px;margin-bottom:0" lu>Доказова база для тарифів. DLI-trigger THRIVE. KoBoToolbox → Трембіта → ЄСОЗ закриває gap для WB. Наскрізні показники впливу.</p>
+      <p style="font-size:14px;margin-bottom:0" le>Tariff evidence base. THRIVE DLI trigger. KoBoToolbox → Trembita → ЄСОЗ closes WB gap. End-to-end impact indicators.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
+    <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>Мінекономрозвитку</h3><h3 style="margin-top:0" le>MinEconomy</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Вперше — вимірювання впливу ментального здоров'я на ВВП через транзакційні дані. Формалізація «стада газелей» — сектору зайнятості 5–10 тис. ФОП-психологів. 24 області — змагання за індекс ментального добробуту. Інструмент для планування: від мікроплатежів до макропоказників.</p>
-      <p style="font-size:14px;margin-bottom:0" le>For the first time — measuring mental health's GDP impact through transaction data. Formalising a "herd of gazelles" — employment sector of 5–10K sole-proprietor psychologists. 24 regions competing for mental wellbeing index. Planning instrument: from micro-payments to macro-indicators.</p>
+      <p style="font-size:14px;margin-bottom:0" lu>Вимірювання впливу MH на ВВП через транзакційні дані. Формалізація сектору 5–10 тис. ФОП-психологів. 24 області — індекс ментального добробуту.</p>
+      <p style="font-size:14px;margin-bottom:0" le>MH-to-GDP measurement through transaction data. Formalising 5–10K sole-proprietor psychologist sector. 24 regions — mental wellbeing index.</p>
     </div>
-    <div class="st" style="text-align:left;padding:20px">
-      <h3 style="margin-top:0" lu>Health Cluster та гуманітарні актори</h3><h3 style="margin-top:0" le>Health Cluster and humanitarian actors</h3>
-      <p style="font-size:14px;margin-bottom:0" lu>Цифрова координація замість ручної (450+ організацій, 2 збори на тиждень). Зниження overhead з 30%+ до 3–7%. Виконання Grand Bargain: локалізація, accountability, quality funding. $535M WB залишаються і працюють. Модель, що перевершує зобов'язання Grand Bargain — пряме проникнення ресурсів до конкретних ветеранів.</p>
-      <p style="font-size:14px;margin-bottom:0" le>Digital coordination replacing manual (450+ organisations, 2 meetings/week). Overhead reduction from 30%+ to 3–7%. Grand Bargain delivery: localisation, accountability, quality funding. $535M WB retained and working. A model exceeding Grand Bargain commitments — direct resource penetration to specific veterans.</p>
+    <div class="st" style="text-align:left;padding:16px">
+      <h3 style="margin-top:0" lu>Health Cluster / гуманітарні актори</h3><h3 style="margin-top:0" le>Health Cluster / humanitarian actors</h3>
+      <p style="font-size:14px;margin-bottom:0" lu>Цифрова координація 450+ організацій. Зниження overhead з 30%+ до 3–7%. Виконання Grand Bargain. $535M WB залишаються і працюють.</p>
+      <p style="font-size:14px;margin-bottom:0" le>Digital coordination of 450+ organisations. Overhead reduction from 30%+ to 3–7%. Grand Bargain delivery. $535M WB retained and working.</p>
     </div>
   </div>
 </div>
 
 <hr class="hr">
 
-<!-- ═══ VII. ПРОПОЗИЦІЯ ═══ -->
+<!-- ═══ VIII. ПРОПОЗИЦІЯ ═══ -->
 <div class="section pb">
-  <div class="sl"><span lu>VII · Пропонований формат взаємодії</span><span le>VII · Proposed interaction format</span></div>
+  <div class="sl"><span lu>VIII · Пропонований формат взаємодії</span><span le>VIII · Proposed interaction format</span></div>
   <h2 lu>Меморандум про імплементаційне партнерство</h2>
   <h2 le>Implementation partnership memorandum</h2>
 
-  <p lu>Ми пропонуємо підписання меморандуму про участь НБУ як інституційного імплементаційного партнера у консорціумі FEEL Again. На виконання Хартій, з огляду на системні розриви, які можуть бути подолані інструментами fintech у regulatory sandbox — виготовленого одразу за стандартами та рівнем комплаєнсу, відповідного державним інтересам.</p>
-  <p le>We propose signing a memorandum on NBU's participation as an institutional implementation partner in the FEEL Again consortium. In fulfilment of both Charters, given systemic gaps that can be overcome with fintech instruments in a regulatory sandbox — built from the outset to compliance standards aligned with state interests.</p>
+  <p lu>Пропозиція полягає у підписанні меморандуму про участь НБУ як інституційного імплементаційного партнера консорціуму FEEL Again. На виконання Хартій, з огляду на системні розриви, які долаються інструментами fintech у regulatory sandbox — виготовленого за стандартами комплаєнсу, відповідного державним інтересам.</p>
+  <p le>The proposal is signing a memorandum on NBU's participation as institutional implementation partner in the FEEL Again consortium. In fulfilment of both Charters, addressing systemic gaps overcome with fintech instruments in a regulatory sandbox — built to compliance standards aligned with state interests.</p>
 
-  <p lu><strong>Формат:</strong> НБУ входить до наглядової ради консорціуму. Рівні відносини за всіма завданнями оформлюються окремими прямими договорами. Пакет ініціатив розділяється на напрямки: тестування галузевої моделі, регіональна взаємодія для залучення фахівців з урахуванням аналізу повернення ветеранів, політики розподілу фінансування WB та міжнародних стейкхолдерів, формування єдиного деперсоніфікованого dataset, дашборди для публічного контролю.</p>
-  <p le><strong>Format:</strong> NBU joins the consortium's supervisory board. Peer-level relationships across all tasks are formalised through separate direct agreements. The initiative package is divided into tracks: sectoral model testing, regional interaction for specialist engagement based on veteran-return analysis, WB and international stakeholder funding allocation policies, unified depersonalised dataset formation, dashboards for public control.</p>
+  <p lu><strong>Формат:</strong> НБУ входить до наглядової ради консорціуму. Рівні відносини за всіма завданнями — окремими прямими договорами. Напрямки: тестування галузевої моделі, регіональна взаємодія, формування dataset, дашборди публічного контролю.</p>
+  <p le><strong>Format:</strong> NBU joins the consortium's supervisory board. Peer-level relationships via separate direct agreements. Tracks: sectoral model testing, regional interaction, dataset formation, public control dashboards.</p>
 
   <h3 lu>Консорціум FEEL Again</h3>
   <h3 le>FEEL Again Consortium</h3>
@@ -536,58 +585,46 @@ a:hover{opacity: 0.8; text-decoration:underline}
     <tr>
       <td><strong lu>Координація</strong><strong le>Coordination</strong></td>
       <td>ГО «ФВС» (з 2001, 70+ проєктів)</td>
-      <td lu>Стратегія, стандарти, адмін. Think tank: прозорість бюджетів, антикорупція, парламентська експертна група</td><td le>Strategy, standards, admin. Think tank: budget transparency, anti-corruption, parliamentary expert group</td>
+      <td lu>Стратегія, стандарти, адмін. Think tank: прозорість бюджетів, парламентська експертна група</td><td le>Strategy, standards, admin. Think tank: budget transparency, parliamentary expert group</td>
     </tr>
     <tr>
       <td><strong lu>Клініка</strong><strong le>Clinical</strong></td>
       <td>GEHA Clalit (IL) + USC ICT (US)</td>
-      <td lu>EMDR (золотий стандарт WHO, 8–12 сеансів) + VR Bravemind (28 VA-центрів, >80% завершення). Ізраїльський клінічний протокол + DoD-валідована VR-терапія</td><td le>EMDR (WHO gold standard, 8–12 sessions) + VR Bravemind (28 VA centres, >80% completion). Israeli clinical protocol + DoD-validated VR therapy</td>
+      <td lu>EMDR (золотий стандарт WHO, 8–12 сеансів) + VR Bravemind (28 VA-центрів, >80% завершення)</td><td le>EMDR (WHO gold standard, 8–12 sessions) + VR Bravemind (28 VA centres, >80% completion)</td>
     </tr>
     <tr>
       <td><strong lu>Фінтех</strong><strong le>FinTech</strong></td>
       <td>Quoroom ex-HighCastle (UK) + Enkidu P2P (CH)</td>
-      <td lu>DLT верифікація, P2P co-financing, SAP partnership. Escrow, outcome-based release, IATI стандарт. $3.4M+ медичного постачання для України з 2022</td><td le>DLT verification, P2P co-financing, SAP partnership. Escrow, outcome-based release, IATI standard. $3.4M+ medical supply for Ukraine since 2022</td>
+      <td lu>DLT верифікація, P2P co-financing, escrow, outcome-based release. $3.4M+ медпостачання для України з 2022</td><td le>DLT verification, P2P co-financing, escrow, outcome-based release. $3.4M+ medical supply for Ukraine since 2022</td>
     </tr>
     <tr>
       <td><strong lu>Наука</strong><strong le>Research</strong></td>
       <td>КНУ Шевченко + Oxford/Groningen</td>
-      <td lu>Centre of Excellence: методологія впливу MH на ВВП, перший регресний dataset 10 років, дистанційне підвищення кваліфікації</td><td le>Centre of Excellence: MH-to-GDP impact methodology, first 10-year regression dataset, remote professional development</td>
+      <td lu>Centre of Excellence: методологія MH→ВВП, перший регресний dataset 10 років</td><td le>Centre of Excellence: MH-to-GDP methodology, first 10-year regression dataset</td>
     </tr>
     <tr>
       <td><strong lu>Потенційні</strong><strong le>Potential</strong></td>
       <td>ЄБРР + E&Y + UN Global Compact</td>
-      <td lu>ЄБРР €250M Veterans Reintegration. E&Y — аудит + корпоративна дистрибуція. UN GC — глобальний фреймворк ESG</td><td le>EBRD €250M Veterans Reintegration. E&Y — audit + corporate distribution. UN GC — global ESG framework</td>
+      <td lu>ЄБРР €250M Veterans Reintegration. E&Y — аудит. UN GC — глобальний ESG</td><td le>EBRD €250M Veterans Reintegration. E&Y — audit. UN GC — global ESG</td>
     </tr>
   </table>
 
-  <p lu><strong>$5M вже інвестовано</strong>. Ми прийшли не з запитом — а з рішенням та інвестиціями. Пісочниця в даному випадку стає акселератором появи необхідного сервісу для держави без додаткових витрат для бюджету. Ми розраховуємо на безшовну інтеграцію.</p>
-  <p le><strong>$5M already invested</strong>. We came not with a request — but with a solution and investments. The sandbox in this case becomes an accelerator for deploying a state-needed service at zero additional budget cost. We aim for seamless integration.</p>
+  <p lu><strong>$5M вже інвестовано</strong> консорціумом. Пропозиція — не запит на фінансування, а готове рішення з інвестиціями. Пісочниця стає акселератором сервісу для держави без додаткових бюджетних витрат. Розрахунок — на безшовну інтеграцію.</p>
+  <p le><strong>$5M already invested</strong> by the consortium. The proposal is not a funding request, but a ready solution with investments. The sandbox becomes a state-service accelerator at zero additional budget cost. The expectation — seamless integration.</p>
 
   <div class="teal-box">
     <h3 lu>Кросекторальне партнерство</h3>
     <h3 le>Cross-sectoral partnership</h3>
-    <p lu>Державно-приватно-соціальне інноваційне партнерство на перетині технологій, ресурсів, послуг та ментального добробуту країни. На підтримку ініціатив Першої леді, з підтвердженням Світового банку, через встановлення політик, стандартизацію та цифрову оркестрацію розрізнених ініціатив.</p>
-    <p le>Public-Private-Social innovative partnership at the intersection of technologies, resources, services, and the country's mental wellbeing. Supporting the First Lady's initiatives, with World Bank validation, through establishing policies, standardisation and digital orchestration of disparate initiatives.</p>
-  </div>
-  
-  <div class="cta-box">
-    <div class="cta-text">
-      <h2 lu>Аналітика та Dashboard Світового банку</h2>
-      <h2 le>Analytics and World Bank Dashboard</h2>
-      <p lu>Канонічні дані, інтегровані DLI-метрики проєкту THRIVE, фінансові моделі та верифікація транзакцій доступні у захищеній системі координат.</p>
-      <p le>Canonical data, integrated THRIVE project DLI metrics, financial models, and transaction verification are available in the secure coordinate system.</p>
-    </div>
-    <a href="https://dashboard.feelagain.me" class="cta-btn" target="_blank">
-      <span lu>Перейти до системи</span>
-      <span le>Access Dashboard</span>
-    </a>
+    <p lu>Державно-приватно-соціальне інноваційне партнерство на перетині технологій, ресурсів, послуг та ментального добробуту країни. На підтримку ініціатив Першої леді, з підтвердженням Світового банку, через встановлення політик, стандартів та процедур, підготовку відкритих даних — аналітичних налаштувань, які потребує Україна.</p>
+    <p le>Public-Private-Social innovative partnership at the intersection of technologies, resources, services, and national mental wellbeing. Supporting the First Lady's initiatives, with World Bank validation, through policies, standards, procedures, and open data preparation — the analytical infrastructure Ukraine needs.</p>
   </div>
 
-  <p style="font-size:13.5px;color:var(--text-sec);margin-top:18px" lu>Всі канонічні дані, верифікації та розрахунки доступні на <a href="https://dashboard.feelagain.me">dashboard.feelagain.me</a>. Програма та стратегія — <a href="https://feelagain.me">feelagain.me</a>.</p>
-  <p style="font-size:13.5px;color:var(--text-sec);margin-top:18px" le>All canonical data, verifications, and calculations available at <a href="https://dashboard.feelagain.me">dashboard.feelagain.me</a>. Programme and strategy — <a href="https://feelagain.me">feelagain.me</a>.</p>
-
-  <p style="font-size:14px;margin-top:20px" lu>Ігоре, ми бачимо рідкісне співпадіння: людина з досвідом технопідприємця, ветерана і стратега — на позиції, де саме ці три якості створюють унікальну можливість для реалізації. Будемо вдячні за Вашу оцінку і пораду.</p>
-  <p style="font-size:14px;margin-top:20px" le>Igor, we see a rare alignment: a person with tech-entrepreneur, veteran, and strategist experience — in a position where exactly these three qualities create a unique implementation opportunity. We would value your assessment and advice.</p>
+  <div class="cta-row">
+    <a href="https://dashboard.feelagain.me" class="cta-btn" target="_blank" lu>Дашборд з верифікованими даними →</a>
+    <a href="https://dashboard.feelagain.me" class="cta-btn" target="_blank" le>Dashboard with verified data →</a>
+    <a href="https://feelagain.me" class="cta-btn cta-btn-sec" target="_blank" lu>Програма та стратегія</a>
+    <a href="https://feelagain.me" class="cta-btn cta-btn-sec" target="_blank" le>Programme and strategy</a>
+  </div>
 </div>
 
 </div><!-- /ct -->
@@ -623,6 +660,28 @@ a:hover{opacity: 0.8; text-decoration:underline}
   document.getElementById('td').onclick=function(){T('dark')};
   var sl,st;try{sl=localStorage.getItem('fl');st=localStorage.getItem('ft')}catch(e){}
   L(sl||'uk');T(st||'light');
+})();
+
+/* Accordion */
+function toggleAcc(el){
+  var body=el.nextElementSibling;
+  var arrow=el.querySelector('.acc-arrow');
+  body.classList.toggle('open');
+  arrow.textContent=body.classList.contains('open')?'▾':'▸';
+}
+
+/* Erosion counter — ticks monthly */
+(function(){
+  var base=new Date(2026,3,1); // April 2026
+  var el=document.getElementById('erosion-counter');
+  if(!el)return;
+  function update(){
+    var now=new Date();
+    var months=Math.max(1,(now.getFullYear()-base.getFullYear())*12+(now.getMonth()-base.getMonth()));
+    var total=months*5000000;
+    el.textContent='$'+total.toLocaleString('en-US');
+  }
+  update();
 })();
 </script>
 
