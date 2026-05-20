@@ -133,6 +133,21 @@ a:hover{text-decoration:underline}
 .big-counter.teal .big-counter-label{color:var(--teal)}
 .big-counter.teal .big-counter-val{color:var(--teal)}
 
+/* Interactive elements */
+.big-counter[onclick], .scoreboard[onclick], .st[onclick], .hero-stat[onclick] {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.big-counter[onclick]:hover, .scoreboard[onclick]:hover, .st[onclick]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow: 0 0 15px var(--gold-dim);
+}
+.hero-stat[onclick]:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
 /* ─── SCOREBOARD ─── */
 .scoreboard{background:var(--navy);border:1px solid var(--gold-border);padding:32px 24px;margin:20px 0;position:relative;overflow:hidden}
 [data-theme="dark"] .scoreboard{background:#0c1424;border-color:rgba(200,164,92,0.25)}
@@ -269,6 +284,10 @@ a:hover{text-decoration:underline}
 <body>
 
 <div class="controls">
+  <a href="https://dashboard.feelagain.me" target="_blank" class="cb" style="text-decoration: none; font-weight: 700; margin-right: 4px; border-color: var(--teal); color: var(--teal); opacity: 0.9; box-shadow: 0 0 10px var(--teal-dim); display: inline-flex; align-items: center; border-radius: 4px !important;">
+    <span lu>Живий дашборд ↗</span>
+    <span le>Live Dashboard ↗</span>
+  </a>
   <button class="cb" id="lu">UK</button>
   <button class="cb" id="le">EN</button>
   <div class="cd"></div>
@@ -291,9 +310,21 @@ a:hover{text-decoration:underline}
     <p class="hero-sub" lu>Цифрові та фінансові рейки для сектору ментального здоров'я. Не провайдер, не координатор — інфраструктура.</p>
     <p class="hero-sub" le>Digital and financial rails for the mental health sector. Not a provider, not a coordinator — infrastructure.</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-n">3.9M</div><div class="hero-stat-l" lu>потребують допомоги</div><div class="hero-stat-l" le>need care</div></div>
-      <div class="hero-stat"><div class="hero-stat-n">62.4M</div><div class="hero-stat-l" lu>сеансів — потреба</div><div class="hero-stat-l" le>sessions needed</div></div>
-      <div class="hero-stat"><div class="hero-stat-n">~$8B</div><div class="hero-stat-l" lu>втрати ВВП / рік</div><div class="hero-stat-l" le>GDP loss / year</div></div>
+      <div class="hero-stat" onclick="window.open('https://dashboard.feelagain.me/?screen=l2-mhei', '_blank')" title="View need details in Live Dashboard">
+        <div class="hero-stat-n">3.9M</div>
+        <div class="hero-stat-l" lu>потребують допомоги ↗</div>
+        <div class="hero-stat-l" le>need care ↗</div>
+      </div>
+      <div class="hero-stat" onclick="window.open('https://dashboard.feelagain.me/?screen=l2-mhei', '_blank')" title="View need details in Live Dashboard">
+        <div class="hero-stat-n">62.4M</div>
+        <div class="hero-stat-l" lu>сеансів — потреба ↗</div>
+        <div class="hero-stat-l" le>sessions needed ↗</div>
+      </div>
+      <div class="hero-stat" onclick="window.open('https://dashboard.feelagain.me/?screen=l2-mhei', '_blank')" title="View GDP impact details in Live Dashboard">
+        <div class="hero-stat-n">~$8B</div>
+        <div class="hero-stat-l" lu>втрати ВВП / рік ↗</div>
+        <div class="hero-stat-l" le>GDP loss / year ↗</div>
+      </div>
     </div>
   </div>
   <div class="hero-meta">
@@ -351,11 +382,11 @@ a:hover{text-decoration:underline}
   <h2 lu>Виділені кошти, які не рухаються</h2>
   <h2 le>Allocated funds that are not moving</h2>
 
-  <div class="big-counter">
-    <div class="big-counter-label" lu>Кошти Світового банку: виділені, заблоковані</div>
-    <div class="big-counter-label" le>World Bank funds: allocated, stalled</div>
+  <div class="big-counter" onclick="window.open('https://dashboard.feelagain.me/?screen=l2-fintech', '_blank')" title="View World Bank funding details in Live Dashboard">
+    <div class="big-counter-label" lu>Кошти Світового банку: виділені, заблоковані ↗</div>
+    <div class="big-counter-label" le>World Bank funds: allocated, stalled ↗</div>
     <div class="big-counter-val">$535 000 000</div>
-    <div class="big-counter-sub">HEAL $500M + THRIVE $454M</div>
+    <div class="big-counter-sub">HEAL $500M + THRIVE $454M. Натисніть для перегляду деталей.</div>
   </div>
 
   <div class="g2">
@@ -387,13 +418,13 @@ a:hover{text-decoration:underline}
   <h2 lu>Масштаб потреби та реальна спроможність</h2>
   <h2 le>Scale of need and actual capacity</h2>
 
-  <div class="scoreboard">
-    <div class="scoreboard-title" lu>MHPSS Scoreboard · Україна · Live</div>
-    <div class="scoreboard-title" le>MHPSS Scoreboard · Ukraine · Live</div>
+  <div class="scoreboard" onclick="window.open('https://dashboard.feelagain.me/?screen=l2-journey', '_blank')" title="View live scoreboard details in Live Dashboard">
+    <div class="scoreboard-title" lu>MHPSS Scoreboard · Україна · Live ↗</div>
+    <div class="scoreboard-title" le>MHPSS Scoreboard · Ukraine · Live ↗</div>
     <div class="scoreboard-center">
       <div class="scoreboard-big">62 400 000</div>
-      <div class="scoreboard-big-label" lu>сеансів — обсяг потреби (3.9M × 16, WHO)</div>
-      <div class="scoreboard-big-label" le>sessions — demand volume (3.9M × 16, WHO)</div>
+      <div class="scoreboard-big-label" lu>сеансів — обсяг потреби (3.9M × 16, WHO). Натисніть для перегляду екосистеми.</div>
+      <div class="scoreboard-big-label" le>sessions — demand volume (3.9M × 16, WHO). Click to view ecosystem.</div>
     </div>
     <div class="scoreboard-grid">
       <div class="sb-cell">
@@ -593,11 +624,11 @@ a:hover{text-decoration:underline}
       <p style="font-size:13.5px;margin-bottom:0" lu>СЕП з миттєвими платежами <10 сек (ISO 20022, SEPA-aligned, січень 2024). Клірингхаус для MHPSS-транзакцій: від мікроплатежів за сеанси до макроагрегації для державної аналітики.</p>
       <p style="font-size:13.5px;margin-bottom:0" le>SEP with instant payments <10 sec (ISO 20022, SEPA-aligned, January 2024). Clearinghouse for MHPSS transactions: from micro-payments per session to macro-aggregation for state analytics.</p>
     </div>
-    <div class="st" style="text-align:left;padding:16px">
-      <h3 style="margin-top:0" lu>Тіньовий сектор</h3>
-      <h3 style="margin-top:0" le>Shadow sector</h3>
-      <p style="font-size:13.5px;margin-bottom:0" lu>5 000–15 000 практикуючих поза формальними системами, $200–300M SAM. Штраф формалізації: 65%. НБУ має інструментарій для оцінки неформальних фінансових потоків та законодавчої ініціативи (ст. 93 Конституції).</p>
-      <p style="font-size:13.5px;margin-bottom:0" le>5 000–15 000 practitioners outside formal systems, $200–300M SAM. Formalisation penalty: 65%. NBU has the toolkit for assessing informal financial flows and legislative initiative (Art. 93 Constitution).</p>
+    <div class="st" style="text-align:left;padding:16px" onclick="window.open('https://dashboard.feelagain.me/?screen=l2-journey', '_blank')" title="View shadow sector integration in Live Dashboard">
+      <h3 style="margin-top:0" lu>Тіньовий сектор ↗</h3>
+      <h3 style="margin-top:0" le>Shadow sector ↗</h3>
+      <p style="font-size:13.5px;margin-bottom:0" lu>5 000–15 000 практикуючих поза формальними системами, $200–300M SAM. Штраф формалізації: 65%. Натисніть для перегляду карти шляхів.</p>
+      <p style="font-size:13.5px;margin-bottom:0" le>5 000–15 000 practitioners outside formal systems, $200–300M SAM. Formalisation penalty: 65%. Click to view journey map.</p>
     </div>
     <div class="st" style="text-align:left;padding:16px">
       <h3 style="margin-top:0" lu>Суверенність</h3>
