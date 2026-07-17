@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" data-theme="light" data-lang="uk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FEEL Again Document</title>
+<title>Аналітичний бриф НБУ v2.0 | FEEL Again</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg0:#0C1816; --bg1:#172B26; --bg2:#1F3530; --bg3:#273F3A;
@@ -35,8 +37,7 @@
 [data-theme="light"] body::before { display:none; }
 [data-theme="light"] body { background:var(--bg0); }
 [data-theme="light"] .status-bar { background:#E0DAD2; border-color:rgba(122,80,16,0.25); }
-[data-theme="light"] .sidebar { background:rgba(220,215,208,0.96); }
-[data-theme="light"] .metric-card { background:#F0EBE3; }
+[data-theme="light"] 
 [data-theme="light"] .formula { background:#F5F0E8; }
 [data-theme="light"] .callout-gl { background:rgba(122,80,16,0.06); }
 [data-theme="light"] .callout-res { background:rgba(30,92,138,0.06); }
@@ -117,20 +118,7 @@ body::before {
 
 .layout { display:flex; flex:1; }
 
-.sidebar {
-  position:fixed;
-  left:0;top:31px;
-  width:var(--sidebar);
-  height:calc(100vh - 31px);
-  background:rgba(9,18,14,0.92);
-  border-right:1px solid var(--bd);
-  overflow-y:auto;
-  z-index:200;
-  display:flex;
-  flex-direction:column;
-  backdrop-filter:blur(10px);
-}
-.sb-brand { padding:20px 18px 14px; border-bottom:1px solid var(--gl-20); }
+
 .sb-logo {
   font-family:'Barlow Condensed',sans-serif;
   font-size:1.1rem;
@@ -203,7 +191,7 @@ body::before {
 .sb-comp-link:hover{color:var(--gl);}
 
 .main {
-  margin-left:var(--sidebar);
+  margin-left:0; max-width:1200px; margin:0 auto;
   flex:1;
   max-width:900px;
   padding:0 48px 100px;
@@ -515,12 +503,51 @@ table.dtbl tr:hover td { background:var(--gl-04); }
 ::-webkit-scrollbar-thumb{background:var(--bd);border-radius:2px;}
 
 @media print {
-  .sidebar,.status-bar{display:none;}
-  .main{margin-left:0;padding:20px;}
+  
 }
 </style>
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  localStorage.setItem('lang', lang);
+  document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  document.getElementById('btn-light').classList.toggle('active', theme === 'light');
+  document.getElementById('btn-dark').classList.toggle('active', theme === 'dark');
+}
+window.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('lang') || 'uk';
+  const theme = localStorage.getItem('theme') || 'light';
+  setLang(lang);
+  setTheme(theme);
+});
+</script>
 </head>
 <body>
+
+<div class="status-bar">
+  <span><span class="status-dot"></span>FEEL AGAIN · ANALYTICAL REPORT · v2.0 · 2026</span>
+  <div style="display:flex;gap:6px;align-items:center;">
+  <div class="lang-toggle" style="margin-right:4px;">
+    <button class="lang-btn active" id="btn-uk" onclick="setLang('uk')">УКР</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-light" onclick="setTheme('light')">☀</button>
+    <button class="lang-btn" id="btn-dark" onclick="setTheme('dark')">◑</button>
+  </div>
+  </div>
+  <span>КОНФІДЕНЦІЙНО · CONFIDENTIAL</span>
+</div>
+
+
+
+
+
 <main class="main">
 
 <div class="doc-header">
@@ -1159,6 +1186,29 @@ table.dtbl tr:hover td { background:var(--gl-04); }
 </section>
 
 </main>
+</div>
+
+<script>
+// Language and theme toggle functionality
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  localStorage.setItem('lang', lang);
+  document.getElementById('btn-uk').classList.toggle('active', lang === 'uk');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  document.getElementById('btn-light').classList.toggle('active', theme === 'light');
+  document.getElementById('btn-dark').classList.toggle('active', theme === 'dark');
+}
+window.addEventListener('DOMContentLoaded', () => {
+  const lang = localStorage.getItem('lang') || 'uk';
+  const theme = localStorage.getItem('theme') || 'light';
+  setLang(lang);
+  setTheme(theme);
+});
+</script>
 
 </body>
 </html>
