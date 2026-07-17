@@ -117,7 +117,7 @@ body::before {
   color:var(--gl);
 }
 
-.layout { display:flex; width:100%; }
+.layout { display:flex; flex:1; }
 
 .sidebar {
   position:fixed;
@@ -205,8 +205,8 @@ body::before {
 .sb-comp-link:hover{color:var(--gl);}
 
 .main {
-  margin-left:0;
-  width:100%;
+  margin-left:0; max-width:1200px;
+  flex:1;
   max-width:900px;
   padding:0 48px 100px;
 }
@@ -558,8 +558,6 @@ window.addEventListener('DOMContentLoaded', () => {
   </div>
   <span>КОНФІДЕНЦІЙНО · CONFIDENTIAL</span>
 </div>
-
-
 
 
 
