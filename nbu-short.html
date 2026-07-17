@@ -45,7 +45,7 @@
 [data-theme="light"] .callout-d4 { background:rgba(40,106,80,0.06); }
 [data-theme="light"] .chain-item { background:#F0EBE3; }
 [data-theme="light"] table.dtbl td { border-color:rgba(180,173,166,0.5); }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 
 body {
@@ -521,7 +521,12 @@ window.addEventListener('DOMContentLoaded', () => {
   setTheme(theme);
 });
 </script>
-</head>
+
+    <style>
+      body { margin: 0; padding: 20px; font-family: 'Barlow', sans-serif; }
+      .status-bar { display: none; }
+    </style>
+    </head>
 <body>
 
 <div class="status-bar">
@@ -534,12 +539,11 @@ window.addEventListener('DOMContentLoaded', () => {
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-light" onclick="setTheme('light')">☀</button>
     <button class="lang-btn" id="btn-dark" onclick="setTheme('dark')">◑</button>
-  </div>
-  </div>
+  
   <span>КОНФІДЕНЦІЙНО · CONFIDENTIAL</span>
 </div>
 
-<div class="layout">
+
 
 <nav class="sidebar">
   <div class="sb-brand">
@@ -547,8 +551,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sb-sub">
       <span class="uk">Короткий бриф НБУ<br>Версія 2.0 · Липень 2026</span>
       <span class="en">NBU Short Brief<br>Version 2.0 · July 2026</span>
-    </div>
-  </div>
+    
 
   <div class="sb-section">
     <div class="sb-label"><span class="uk">Розділи</span><span class="en">Sections</span></div>
@@ -569,11 +572,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   <div class="sb-companion">
     <div class="sb-comp-label"><span class="uk">Повна версія</span><span class="en">Full Version</span></div>
-    <a href="nbu-full.html" class="sb-comp-link" target="_blank">→ <span class="uk">Аналітичний звіт</span><span class="en">Analytical Report</span></a>
+    <a href="analytical-report.html" class="sb-comp-link" target="_blank">→ <span class="uk">Аналітичний звіт</span><span class="en">Analytical Report</span></a>
   </div>
 </nav>
 
-<main class="main">
+
 
 <div class="doc-header">
   <div class="doc-eyebrow">
@@ -596,8 +599,7 @@ window.addEventListener('DOMContentLoaded', () => {
   <div class="doc-meta">
     <div class="meta-item"><span class="uk">Версія:</span><span class="en">Version:</span> <span>v2.0 · <span class="uk">Липень</span><span class="en">July</span> 2026</span></div>
     <div class="meta-item"><span class="uk">Програма:</span><span class="en">Programme:</span> <span>FEEL Again</span></div>
-    <div class="meta-item"><span class="uk">Контакт:</span><span class="en">Contact:</span> <span>Олексій Зволінський</span></div>
-  </div>
+    <div class="meta-item"><span class="uk">Контакт:</span><span class="en">Contact:</span> <span>Олексій Зволінський</span>
 </div>
 
 <!-- SECTION I: Key Figures -->
@@ -606,51 +608,42 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">I</div>
     <div class="sec-title-block">
       <h2><span class="uk">Ключові цифри</span><span class="en">Key Figures</span></h2>
-      <div class="sec-eng">L3 Primary Data · MHPSS Sector · NBU Regulatory Role</div>
-    </div>
+      <div class="sec-eng">L3 Primary Data · MHPSS Sector · NBU Regulatory Role
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">3,9M</div>
       <div class="metric-lbl"><span class="uk">осіб з клінічними порушеннями</span><span class="en">persons with clinical disorders</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_01 · WHO / Lancet 2023</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_01 · WHO / Lancet 2023
     <div class="metric-card">
       <div class="metric-val">19-70M</div>
       <div class="metric-lbl"><span class="uk">сесій/рік — потреба</span><span class="en">sessions/year — need</span></div>
-      <div class="metric-src src-g">✓ GREEN · WHO 5-12-20</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WHO 5-12-20
     <div class="metric-card">
       <div class="metric-val svc">260K</div>
       <div class="metric-lbl"><span class="uk">сесій/рік — потужність НСЗУ</span><span class="en">sessions/year — NSZU capacity</span></div>
-      <div class="metric-src src-g">✓ GREEN · НСЗУ</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · НСЗУ
     <div class="metric-card">
       <div class="metric-val">0,4-1,4%</div>
       <div class="metric-lbl"><span class="uk">покриття потреби</span><span class="en">need coverage</span></div>
-      <div class="metric-src src-g">✓ GREEN · розрахункове</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · розрахункове
     <div class="metric-card">
       <div class="metric-val res">$13,94B</div>
       <div class="metric-lbl"><span class="uk">/рік — втрати ВВП</span><span class="en">/year — GDP losses</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_22</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_22
     <div class="metric-card">
       <div class="metric-val">$380M</div>
       <div class="metric-lbl"><span class="uk">/рік — тіньовий ринок</span><span class="en">/year — shadow market</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_12 · NBU</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_12 · NBU
     <div class="metric-card">
       <div class="metric-val">$1,8B</div>
       <div class="metric-lbl"><span class="uk">витрати на MHPSS 2025</span><span class="en">MHPSS spending 2025</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_25</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_25
     <div class="metric-card">
       <div class="metric-val">$4,19B</div>
       <div class="metric-lbl"><span class="uk">/рік — виплати по інвалідності</span><span class="en">/year — disability payments</span></div>
-      <div class="metric-src src-y">⚠ YELLOW · Compendium 13_GDP_DISABILITY_PROJECTION</div>
-    </div>
+      <div class="metric-src src-y">⚠ YELLOW · Compendium 13_GDP_DISABILITY_PROJECTION
   </div>
 
   <div class="callout callout-gl">
@@ -665,8 +658,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">II</div>
     <div class="sec-title-block">
       <h2><span class="uk">Проблема</span><span class="en">The Problem</span></h2>
-      <div class="sec-eng">NBU Sees All Transactions · Cannot Link to Clinical Outcomes</div>
-    </div>
+      <div class="sec-eng">NBU Sees All Transactions · Cannot Link to Clinical Outcomes
   </div>
 
   <div class="chain">
@@ -676,40 +668,35 @@ window.addEventListener('DOMContentLoaded', () => {
         <strong><span class="uk">НБУ бачить усі транзакції</span><span class="en">NBU sees all transactions</span></strong>
         <span class="uk"> НБУ бачить кожну транзакцію тіньового ринку MHPSS ($380M/рік) через платіжну систему, але не може пов'язати їх з клінічними результатами або бенефіціарами.</span>
         <span class="en"> NBU sees every transaction of the MHPSS shadow market ($380M/year) through the payment system but cannot link them to clinical outcomes or beneficiaries.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 02</div>
       <div class="chain-text">
         <strong><span class="uk">99,59% невидимі для регулятора</span><span class="en">99.59% invisible to regulator</span></strong>
         <span class="uk"> 99,59% реальної потреби та 95,44% реально наданих послуг перебувають поза будь-яким регуляторним інструментарієм НБУ.</span>
         <span class="en"> 99.59% of actual need and 95.44% of actually delivered services lie outside any NBU regulatory instrument.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 03</div>
       <div class="chain-text">
         <strong><span class="uk">$13,94B втрат ВВП</span><span class="en">$13.94B GDP losses</span></strong>
         <span class="uk"> Нелікований ПТСР генерує коморбідний тягар через мультиплікатор 3–5×. Соматизація: $1,200/особа/рік. Інвалідизація: $2,965/особа/рік. Загальні втрати: $13,94B/рік.</span>
         <span class="en"> Untreated PTSD generates comorbid burden via 3–5× multiplier. Somatization: $1,200/person/year. Invalidization: $2,965/person/year. Total losses: $13.94B/year.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 04</div>
       <div class="chain-text">
         <strong><span class="uk">$4,19B виплат по інвалідності</span><span class="en">$4.19B disability payments</span></strong>
         <span class="uk"> При Base-сценарії: $4,19B/рік = 66% держбюджету охорони здоров'я 2026. Це фіскальна загроза.</span>
         <span class="en"> Base scenario: $4.19B/year = 66% of state health budget 2026. This is a fiscal threat.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 05</div>
       <div class="chain-text">
         <strong><span class="uk">Регуляторна вакуума</span><span class="en">Regulatory vacuum</span></strong>
         <span class="uk"> НБУ бачить фінансові потоки, але не має інструментів для регулювання сектору MHPSS. Регуляторна вакуума заповнюється тіньовим ринком.</span>
         <span class="en"> NBU sees financial flows but lacks tools to regulate the MHPSS sector. The regulatory vacuum is filled by the shadow market.</span>
-      </div>
-    </div>
+      
   </div>
 
   <div class="callout callout-red">
@@ -724,27 +711,22 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">III</div>
     <div class="sec-title-block">
       <h2><span class="uk">Рішення</span><span class="en">The Solution</span></h2>
-      <div class="sec-eng">FEEL Again · Digital Bus · Trust Bridge · ENKIDU</div>
-    </div>
+      <div class="sec-eng">FEEL Again · Digital Bus · Trust Bridge · ENKIDU
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">Digital Bus</div>
-      <div class="metric-lbl"><span class="uk">Автоматизоване відшкодування</span><span class="en">Automated reimbursement</span></div>
-    </div>
+      <div class="metric-lbl"><span class="uk">Автоматизоване відшкодування</span><span class="en">Automated reimbursement</span>
     <div class="metric-card">
       <div class="metric-val">Trust Bridge</div>
-      <div class="metric-lbl"><span class="uk">Digital Handshake з ДІЯ</span><span class="en">Digital Handshake with DIIA</span></div>
-    </div>
+      <div class="metric-lbl"><span class="uk">Digital Handshake з ДІЯ</span><span class="en">Digital Handshake with DIIA</span>
     <div class="metric-card">
       <div class="metric-val">ENKIDU</div>
-      <div class="metric-lbl"><span class="uk">Blended Finance P2P Gateway</span><span class="en">Blended Finance P2P Gateway</span></div>
-    </div>
+      <div class="metric-lbl"><span class="uk">Blended Finance P2P Gateway</span><span class="en">Blended Finance P2P Gateway</span>
     <div class="metric-card">
       <div class="metric-val">Унікальний ID</div>
-      <div class="metric-lbl"><span class="uk">Код бенефіціара</span><span class="en">Beneficiary code</span></div>
-    </div>
+      <div class="metric-lbl"><span class="uk">Код бенефіціара</span><span class="en">Beneficiary code</span>
   </div>
 
   <div class="callout callout-gl">
@@ -775,31 +757,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">IV</div>
     <div class="sec-title-block">
       <h2><span class="uk">Економічний ефект</span><span class="en">Economic Effect</span></h2>
-      <div class="sec-eng">$3.8-27.7B/year GDP Savings · NBU Regulatory Oversight</div>
-    </div>
+      <div class="sec-eng">$3.8-27.7B/year GDP Savings · NBU Regulatory Oversight
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">1,3-6,9M</div>
       <div class="metric-lbl"><span class="uk">осіб/рік — допоможені</span><span class="en">persons/year — helped</span></div>
-      <div class="metric-src src-g">✓ GREEN · FEEL Again</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · FEEL Again
     <div class="metric-card">
       <div class="metric-val res">$3,8-27,7B</div>
       <div class="metric-lbl"><span class="uk">/рік — економія ВВП</span><span class="en">/year — GDP savings</span></div>
-      <div class="metric-src src-g">✓ GREEN · (1.3-6.9M) × 50-70% × $5,850</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · (1.3-6.9M) × 50-70% × $5,850
     <div class="metric-card">
       <div class="metric-val">$1,9-26,3B</div>
       <div class="metric-lbl"><span class="uk">/рік — заощаджені ресурси</span><span class="en">/year — saved resources</span></div>
-      <div class="metric-src src-g">✓ GREEN · Prevention vs Treatment</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Prevention vs Treatment
     <div class="metric-card">
       <div class="metric-val svc">$5,7-78,9B</div>
       <div class="metric-lbl"><span class="uk">накопичувальний ефект за 3 роки</span><span class="en">cumulative effect over 3 years</span></div>
-      <div class="metric-src src-g">✓ GREEN · Forecast</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Forecast
   </div>
 
   <div class="callout callout-gl">
@@ -827,8 +804,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">V</div>
     <div class="sec-title-block">
       <h2><span class="uk">Пропозиція</span><span class="en">Proposal</span></h2>
-      <div class="sec-eng">MoU-first Approach · Regulatory Oversight · 2026 Window</div>
-    </div>
+      <div class="sec-eng">MoU-first Approach · Regulatory Oversight · 2026 Window
   </div>
 
   <div class="callout callout-gl">
@@ -854,50 +830,42 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="tl-phase">Фаза 1</div>
       <div class="tl-title"><span class="uk">Меморандум про взаєморозуміння</span><span class="en">Memorandum of Understanding</span></div>
       <div class="tl-desc"><span class="uk">Підписання MoU з НБУ, НСЗУ та Світовим Банком</span><span class="en">Signing MoU with NBU, NSZU, and World Bank</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · Світовий Банк · FEEL Again</span><span class="en">NBU · NSZU · World Bank · FEEL Again</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · Світовий Банк · FEEL Again</span><span class="en">NBU · NSZU · World Bank · FEEL Again</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 2</div>
       <div class="tl-title"><span class="uk">Угода про стандартизацію</span><span class="en">Standardization Agreement</span></div>
       <div class="tl-desc"><span class="uk">Визначення єдиних стандартів MHEI та верифікації</span><span class="en">Defining unified MHEI and verification standards</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again</span><span class="en">NBU · NSZU · FEEL Again</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again</span><span class="en">NBU · NSZU · FEEL Again</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 3</div>
       <div class="tl-title"><span class="uk">Запуск розробки</span><span class="en">Development Launch</span></div>
       <div class="tl-desc"><span class="uk">Розробка технічної інфраструктури Digital Bus</span><span class="en">Development of Digital Bus technical infrastructure</span></div>
-      <div class="tl-actor"><span class="uk">FEEL Again · ENKIDU</span><span class="en">FEEL Again · ENKIDU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">FEEL Again · ENKIDU</span><span class="en">FEEL Again · ENKIDU</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 4</div>
       <div class="tl-title"><span class="uk">Одночасна формалізація</span><span class="en">Simultaneous Formalization</span></div>
       <div class="tl-desc"><span class="uk">Паралельна формалізація фахівців та інтеграція з НСЗУ</span><span class="en">Parallel formalization of practitioners and integration with NSZU</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again</span><span class="en">NBU · NSZU · FEEL Again</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again</span><span class="en">NBU · NSZU · FEEL Again</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 5</div>
       <div class="tl-title"><span class="uk">Налаштування middleware</span><span class="en">Middleware Setup</span></div>
       <div class="tl-desc"><span class="uk">Налаштування middleware для інтеграції з існуючими системами НБУ</span><span class="en">Middleware setup for integration with existing NBU systems</span></div>
-      <div class="tl-actor"><span class="uk">FEEL Again · НБУ</span><span class="en">FEEL Again · NBU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">FEEL Again · НБУ</span><span class="en">FEEL Again · NBU</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 6</div>
       <div class="tl-title"><span class="uk">Запуск Digital Bus</span><span class="en">Digital Bus Launch</span></div>
       <div class="tl-desc"><span class="uk">Офіційний запуск Digital Bus та Trust Bridge</span><span class="en">Official launch of Digital Bus and Trust Bridge</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again · ENKIDU</span><span class="en">NBU · NSZU · FEEL Again · ENKIDU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again · ENKIDU</span><span class="en">NBU · NSZU · FEEL Again · ENKIDU</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 7</div>
       <div class="tl-title"><span class="uk">Міжгалузевий потік даних</span><span class="en">Interoperable Data Flow</span></div>
       <div class="tl-desc"><span class="uk">Впровадження міжгалузевого обміну даними з НСЗУ та МОЗ</span><span class="en">Implementation of interoperable data exchange with NSZU and Ministry of Health</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · МОЗ</span><span class="en">NBU · NSZU · Ministry of Health</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · МОЗ</span><span class="en">NBU · NSZU · Ministry of Health</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 8</div>
       <div class="tl-title"><span class="uk">Множення</span><span class="en">Multiplication</span></div>
       <div class="tl-desc"><span class="uk">Масштабування рішення на інші сектори</span><span class="en">Scaling the solution to other sectors</span></div>
-      <div class="tl-actor"><span class="uk">FEEL Again · НБУ</span><span class="en">FEEL Again · NBU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">FEEL Again · НБУ</span><span class="en">FEEL Again · NBU</span>
   </div>
 
   <div class="callout callout-d4">
@@ -911,7 +879,7 @@ window.addEventListener('DOMContentLoaded', () => {
   </div>
 </section>
 
-</main>
+
 </div>
 
 <script>

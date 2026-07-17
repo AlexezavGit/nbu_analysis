@@ -541,7 +541,12 @@ window.addEventListener('DOMContentLoaded', () => {
   setTheme(theme);
 });
 </script>
-</head>
+
+    <style>
+      body { margin: 0; padding: 20px; font-family: 'Barlow', sans-serif; }
+      .status-bar { display: none; }
+    </style>
+    </head>
 <body>
 
 <div class="status-bar">
@@ -554,12 +559,11 @@ window.addEventListener('DOMContentLoaded', () => {
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-light" onclick="setTheme('light')">☀</button>
     <button class="lang-btn" id="btn-dark" onclick="setTheme('dark')">◑</button>
-  </div>
-  </div>
+  
   <span>КОНФІДЕНЦІЙНО · CONFIDENTIAL</span>
 </div>
 
-<div class="layout">
+
 
 <nav class="sidebar">
   <div class="sb-brand">
@@ -567,8 +571,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sb-sub">
       <span class="uk">Аналітичний бриф НБУ<br>Версія 2.0 · Липень 2026</span>
       <span class="en">NBU Analytical Brief<br>Version 2.0 · July 2026</span>
-    </div>
-  </div>
+    
 
   <div class="sb-section">
     <div class="sb-label"><span class="uk">Розділи</span><span class="en">Sections</span></div>
@@ -591,10 +594,14 @@ window.addEventListener('DOMContentLoaded', () => {
     <a href="https://dashboard.feelagain.me" class="sb-link" target="_blank"><span class="sb-num">↗</span><span class="uk">Дашборд даних</span><span class="en">Data Dashboard</span></a>
   </div>
 
-
+  <div class="sb-companion">
+    <div class="sb-comp-label"><span class="uk">Супровідні документи</span><span class="en">Companion Docs</span></div>
+    <a href="#" class="sb-comp-link" target="_blank">→ <span class="uk">Пояснювальна записка</span><span class="en">Explanatory Note</span></a>
+    <a href="#" class="sb-comp-link" target="_blank">→ <span class="uk">Записка до Правління НБУ</span><span class="en">Board Memorandum</span></a>
+  </div>
 </nav>
 
-<main class="main">
+
 
 <div class="doc-header">
   <div class="doc-eyebrow">
@@ -619,8 +626,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="meta-item"><span class="uk">Програма:</span><span class="en">Programme:</span> <span>FEEL Again</span></div>
     <div class="meta-item"><span class="uk">Статус:</span><span class="en">Status:</span> <span><span class="uk">Для обговорення</span><span class="en">For Discussion</span></span></div>
     <div class="meta-item"><span class="uk">Джерела:</span><span class="en">Sources:</span> <span>WHO · OECD · EBRD · WB · НСЗУ · МОЗ · LSE</span></div>
-    <div class="meta-item"><span class="uk">Контакт:</span><span class="en">Contact:</span> <span>Олексій Зволінський</span></div>
-  </div>
+    <div class="meta-item"><span class="uk">Контакт:</span><span class="en">Contact:</span> <span>Олексій Зволінський</span>
 </div>
 
 <!-- SECTION I: Scale of Challenge -->
@@ -629,41 +635,34 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">I</div>
     <div class="sec-title-block">
       <h2><span class="uk">Масштаб виклику</span><span class="en">Scale of the Challenge</span></h2>
-      <div class="sec-eng">Beneficiary–Client–Patient → Somatization → Budget Collapse</div>
-    </div>
+      <div class="sec-eng">Beneficiary–Client–Patient → Somatization → Budget Collapse
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">3,9M</div>
       <div class="metric-lbl"><span class="uk">осіб з клінічними порушеннями, що потребують прямого втручання</span><span class="en">persons with clinical disorders requiring direct intervention</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_01 · WHO / Lancet 2023</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_01 · WHO / Lancet 2023
     <div class="metric-card">
       <div class="metric-val">19-70M</div>
       <div class="metric-lbl"><span class="uk">сесій/рік — потреба за стандартами ВООЗ (5-20 × 3,9M)</span><span class="en">sessions/year — WHO protocol need (5-20 × 3.9M)</span></div>
-      <div class="metric-src src-g">✓ GREEN · WHO 5-12-20</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WHO 5-12-20
     <div class="metric-card">
       <div class="metric-val svc">$13,94B</div>
       <div class="metric-lbl"><span class="uk">/рік — втрати ВВП через неліковану МHPSS</span><span class="en">/year — GDP loss from untreated MHPSS</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_22</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_22
     <div class="metric-card">
       <div class="metric-val">$380M</div>
       <div class="metric-lbl"><span class="uk">/рік — тіньовий ринок MHPSS (окремий від втрат ВВП)</span><span class="en">/year — MHPSS shadow market (separate from GDP losses)</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_12 · NBU calculation</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_12 · NBU calculation
     <div class="metric-card">
       <div class="metric-val">0,4-1,4%</div>
       <div class="metric-lbl"><span class="uk">покриття потреби у формальному секторі (260K / 19-70M сесій)</span><span class="en">formal sector need coverage (260K / 19-70M sessions)</span></div>
-      <div class="metric-src src-g">✓ GREEN · НСЗУ / розрахункове</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · НСЗУ / розрахункове
     <div class="metric-card">
       <div class="metric-val res">$1,8B</div>
       <div class="metric-lbl"><span class="uk">загальний обсяг витрат на MHPSS 2025</span><span class="en">total MHPSS spending 2025</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_25</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_25
   </div>
 
   <div class="chain">
@@ -673,64 +672,56 @@ window.addEventListener('DOMContentLoaded', () => {
         <strong><span class="uk">Бенефіціар — клієнт — пацієнт</span><span class="en">Beneficiary — Client — Patient</span></strong>
         <span class="uk"> — три терміни навмисно стоять поруч. Для Світового банку це бенефіціар програми, для приватного ринку — клієнт, для системи охорони здоров'я — пацієнт. Один і той самий суб'єкт з унікальним кодом/ID (GDPR/HIPAA compliant, de-personified). Оцінна клінічна потреба: <span class="val">3,9M</span> осіб (Lancet 2023, GREEN · L3_DAT_01).</span>
         <span class="en"> — three terms intentionally side by side. For the World Bank: a programme beneficiary. For the private market: a client. For the health system: a patient. One subject with unique beneficiary code/ID (GDPR/HIPAA compliant, de-personified). Estimated clinical need: <span class="val">3.9M</span> persons (Lancet 2023, GREEN · L3_DAT_01).</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 02</div>
       <div class="chain-text">
         <strong><span class="uk">Траєкторія до соматизації та інвалідизації</span><span class="en">Trajectory toward somatization and invalidization</span></strong>
         <span class="uk"> Нелікований ПТСР генерує коморбідний тягар на загальну медицину через мультиплікатор <span class="val">3–5×</span> (Krauth et al., Balkan Framework 2019). Балканський прецедент: 25,5% ВПО отримали статус інвалідності протягом 7 років; коморбідна депресія + ПТСР підвищують ризик інвалідизації у <span class="val">5 разів</span>. Вартість соматизації: <span class="val">$1,200</span>/особа/рік. Вартість інвалідизації: <span class="val">$2,965</span>/особа/рік.</span>
         <span class="en"> Untreated PTSD generates comorbid burden on general medicine via a <span class="val">3–5×</span> multiplier (Krauth et al., Balkan Framework 2019). Balkan precedent: 25.5% of IDPs gained disability status within 7 years; comorbid depression + PTSD raises invalidization risk <span class="val">5×</span>. Somatization cost: <span class="val">$1,200</span>/person/year. Invalidization cost: <span class="val">$2,965</span>/person/year.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 03</div>
       <div class="chain-text">
         <strong><span class="uk">Колапс державного бюджету на виплати по інвалідності</span><span class="en">State budget collapse on disability payments</span></strong>
         <span class="uk"> При Base-сценарії: <span class="val">$4,19B/рік</span> = <span class="val">66%</span> держбюджету охорони здоров'я 2026. <span class="asmpt">⚠ YELLOW · Compendium 13_GDP_DISABILITY_PROJECTION</span>. Це не клінічна проблема — це фіскальна загроза: пряме бюджетне зобов'язання держави перед людьми, яких система не спромоглася вчасно лікувати. Загальні втрати ВВП: <span class="val">$13,94B/рік</span>.</span>
         <span class="en"> Base scenario: <span class="val">$4.19B/year</span> = <span class="val">66%</span> of state health budget 2026. <span class="asmpt">⚠ YELLOW · Compendium 13_GDP_DISABILITY_PROJECTION</span>. This is not a clinical problem — it is a fiscal threat: a direct budget obligation the state incurs toward people the system failed to treat in time. Total GDP loss: <span class="val">$13.94B/year</span>.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 04</div>
       <div class="chain-text">
         <strong><span class="uk">Тіньовий ринок поглинає через брак державної реакції</span><span class="en">Shadow market absorbs through absence of state response</span></strong>
         <span class="uk"> <span class="val">$380M</span> тіньового ринку психологічних послуг (GREEN · L3_DAT_12) вже функціонує паралельно. Він не зникне — він зростатиме з кожним роком конфлікту. НБУ бачить кожну транзакцію цього ринку через платіжну систему, але не може пов'язати їх з клінічними результатами. Це окремий показник від втрат ВВП.</span>
         <span class="en"> A <span class="val">$380M</span> shadow market for psychological services (GREEN · L3_DAT_12) already operates in parallel. It will not disappear — it grows with every year of conflict. NBU sees every transaction of this market through the payment system but cannot link them to clinical outcomes. This is separate from GDP losses.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 05</div>
       <div class="chain-text">
         <strong><span class="uk">Міністерство економіки бездіяльне щодо «стада газелей»</span><span class="en">Ministry of Economy inactive on the "gazelle herd"</span></strong>
         <span class="uk"> 50–70 тисяч фахівців з ментального здоров'я залишаються поза будь-якою секторальною стратегією Мінекономіки. Немає програми ФОП-реєстрації, немає податкового стимулювання, немає кластерної ідентифікації. Регуляторна вакуума залишається заповнитися або НБУ, або тіньовим ринком.</span>
         <span class="en"> 50–70K mental health specialists remain outside any Ministry of Economy sectoral strategy. No FOP registration programme, no tax incentive, no cluster identification. The regulatory vacuum will be filled — either by NBU or by the shadow market.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 06</div>
       <div class="chain-text">
         <strong><span class="uk">НСЗУ — медичний редукціонізм</span><span class="en">NHSU — medical reductionism</span></strong>
         <span class="uk"> НСЗУ звела MHPSS до медичної компетенції, обмеживши доступ до Пакету 51 виключно психіатрами та лікарями-психотерапевтами. 95%+ фахівців — психологи, counselors, соціальні працівники — залишаються поза системою відшкодування. Це структурно блокує масштабування у 74-відсотковому treatment gap.</span>
         <span class="en"> NHSU has reduced MHPSS to medical competence, restricting Package 51 reimbursement to psychiatrists and licensed psychotherapist-physicians. 95%+ of practitioners — psychologists, counselors, social workers — remain outside reimbursement. This structurally blocks scaling into a 74% treatment gap.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 07</div>
       <div class="chain-text">
         <strong><span class="uk">Донори оголосили exit strategy через Grand Bargain humanitarian reset</span><span class="en">Donors announced exit strategy via Grand Bargain humanitarian reset</span></strong>
         <span class="uk"> Grand Bargain 2.0 та перегляд гуманітарного фінансування означає, що гуманітарний сектор, який наразі покриває ~5M сесій/рік через 600K бенефіціарів, буде згорнутий у горизонті 3–5 років. Ці ресурси не перейдуть автоматично до держсектору — вони зникнуть.</span>
         <span class="en"> Grand Bargain 2.0 and humanitarian funding review means the humanitarian sector, currently delivering ~5M sessions/year to 600K beneficiaries, will be wound down within 3–5 years. These resources will not automatically transfer to the state sector — they will disappear.</span>
-      </div>
-    </div>
+      
     <div class="chain-item">
       <div class="chain-arrow">↓ 08</div>
       <div class="chain-text">
         <strong><span class="uk">Якщо зараз не діяти — тіньовий ринок поглине навчених фахівців із гумсектору</span><span class="en">Without action now — shadow market absorbs trained specialists from the humanitarian sector</span></strong>
         <span class="uk"> Кожен фахівець, навчений за WHO mhGAP або гуманітарними програмами, при відсутності держструктури для переходу — іде у приватну тінь. Це не катастрофа сама по собі, але це означає: державний бюджет платить за виплати по інвалідності, а не за відновлення. Вікно дій — 2026 рік.</span>
         <span class="en"> Every specialist trained under WHO mhGAP or humanitarian programmes, absent a state structure to transition into, moves to private shadow practice. The state budget then pays disability claims, not recovery. The action window is 2026.</span>
-      </div>
-    </div>
+      
   </div>
 
   <div class="tbl-wrap">
@@ -782,31 +773,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">II</div>
     <div class="sec-title-block">
       <h2><span class="uk">Фінансовий розрив</span><span class="en">Financing Gap</span></h2>
-      <div class="sec-eng">WB Program Deceleration — HEAL P180245 + THRIVE P505616</div>
-    </div>
+      <div class="sec-eng">WB Program Deceleration — HEAL P180245 + THRIVE P505616
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">$954M</div>
       <div class="metric-lbl"><span class="uk">загальний обсяг двох програм СБ (HEAL + THRIVE)</span><span class="en">total volume of two WB programmes (HEAL + THRIVE)</span></div>
-      <div class="metric-src src-g">✓ GREEN · WB Project Portal</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WB Project Portal
     <div class="metric-card">
       <div class="metric-val svc">~$175,1M</div>
       <div class="metric-lbl"><span class="uk">адресований ринок FEEL Again (L3_DAT_25)</span><span class="en">FEEL Again addressable market (L3_DAT_25)</span></div>
-      <div class="metric-src src-g">✓ GREEN · WB HEAL Component 4: $41.1M + THRIVE: $134M</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WB HEAL Component 4: $41.1M + THRIVE: $134M
     <div class="metric-card">
       <div class="metric-val">$41,1M</div>
       <div class="metric-lbl"><span class="uk">HEAL Component 4 (L3_DAT_23)</span><span class="en">HEAL Component 4 (L3_DAT_23)</span></div>
-      <div class="metric-src src-g">✓ GREEN · WB</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WB
     <div class="metric-card">
       <div class="metric-val">$134M</div>
       <div class="metric-lbl"><span class="uk">THRIVE доступно (L3_DAT_24)</span><span class="en">THRIVE available (L3_DAT_24)</span></div>
-      <div class="metric-src src-g">✓ GREEN · WB</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WB
   </div>
 
   <div class="callout callout-red">
@@ -854,31 +840,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">III</div>
     <div class="sec-title-block">
       <h2><span class="uk">Структурна сліпота</span><span class="en">Structural Invisibility</span></h2>
-      <div class="sec-eng">Zero State Budget for MHPSS → 100% Shadow Market</div>
-    </div>
+      <div class="sec-eng">Zero State Budget for MHPSS → 100% Shadow Market
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">0%</div>
       <div class="metric-lbl"><span class="uk">державний бюджет на MHPSS</span><span class="en">state budget for MHPSS</span></div>
-      <div class="metric-src src-y">⚠ YELLOW · МОЗ України</div>
-    </div>
+      <div class="metric-src src-y">⚠ YELLOW · МОЗ України
     <div class="metric-card">
       <div class="metric-val svc">100%</div>
       <div class="metric-lbl"><span class="uk">ринок MHPSS — тіньовий</span><span class="en">MHPSS market — shadow</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_12</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_12
     <div class="metric-card">
       <div class="metric-val">~52%</div>
       <div class="metric-lbl"><span class="uk">витрати на формалізацію (поточна модель)</span><span class="en">formalization costs (current model)</span></div>
-      <div class="metric-src src-y">⚠ YELLOW · Compendium</div>
-    </div>
+      <div class="metric-src src-y">⚠ YELLOW · Compendium
     <div class="metric-card">
       <div class="metric-val res">11-15%</div>
       <div class="metric-lbl"><span class="uk">витрати на формалізацію (нова модель)</span><span class="en">formalization costs (new model)</span></div>
-      <div class="metric-src src-g">✓ GREEN · FEEL Again</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · FEEL Again
   </div>
 
   <div class="callout callout-gl">
@@ -904,31 +885,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">IV</div>
     <div class="sec-title-block">
       <h2><span class="uk">Індекс MHEI</span><span class="en">MHEI Index</span></h2>
-      <div class="sec-eng">Mental Health Economic Impact · FEEL Again Proprietary Metric</div>
-    </div>
+      <div class="sec-eng">Mental Health Economic Impact · FEEL Again Proprietary Metric
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">$5,850</div>
       <div class="metric-lbl"><span class="uk">/особа/рік — внесок у ВВП від реабілітованої особи</span><span class="en">/person/year — GDP contribution from rehabilitated person</span></div>
-      <div class="metric-src src-g">✓ GREEN · L3_DAT_10</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · L3_DAT_10
     <div class="metric-card">
       <div class="metric-val res">$4,165</div>
       <div class="metric-lbl"><span class="uk">/особа/рік — економія від запобігання соматизації та інвалідизації</span><span class="en">/person/year — savings from preventing somatization and invalidization</span></div>
-      <div class="metric-src src-g">✓ GREEN · $1,200 + $2,965</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · $1,200 + $2,965
     <div class="metric-card">
       <div class="metric-val">1,3-6,9M</div>
       <div class="metric-lbl"><span class="uk">осіб на рік — допоможені FEEL Again (50-70% від 1,37-12,95M недіагностованих)</span><span class="en">persons/year — helped by FEEL Again (50-70% of 1.37-12.95M undiagnosed)</span></div>
-      <div class="metric-src src-g">✓ GREEN · FEEL Again projection</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · FEEL Again projection
     <div class="metric-card">
       <div class="metric-val svc">$3,8-27,7B</div>
       <div class="metric-lbl"><span class="uk">/рік — економічний ефект (економія ВВП)</span><span class="en">/year — economic effect (GDP savings)</span></div>
-      <div class="metric-src src-g">✓ GREEN · (1.3-6.9M) × 50-70% × $5,850</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · (1.3-6.9M) × 50-70% × $5,850
   </div>
 
   <div class="callout callout-res">
@@ -950,31 +926,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">V</div>
     <div class="sec-title-block">
       <h2><span class="uk">Digital Bus / Trust Bridge</span><span class="en">Digital Bus / Trust Bridge</span></h2>
-      <div class="sec-eng">ENKIDU as Blended Finance P2P Gateway + DIIA Digital Handshake</div>
-    </div>
+      <div class="sec-eng">ENKIDU as Blended Finance P2P Gateway + DIIA Digital Handshake
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">ENKIDU</div>
       <div class="metric-lbl"><span class="uk">Blended Finance P2P Gateway (глобальний консорціум-партнер)</span><span class="en">Blended Finance P2P Gateway (global consortium partner)</span></div>
-      <div class="metric-src src-g">✓ GREEN · Partnership</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Partnership
     <div class="metric-card">
       <div class="metric-val">Digital Handshake</div>
       <div class="metric-lbl"><span class="uk">з верифікацією ДІЯ</span><span class="en">with DIIA verification</span></div>
-      <div class="metric-src src-g">✓ GREEN · Trust mechanism</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Trust mechanism
     <div class="metric-card">
       <div class="metric-val">Reverse Waterfall</div>
       <div class="metric-lbl"><span class="uk">Соціальний контракт 10-15% + Корпоративне співфінансування 15-20% + Держава/донор до 70-95%</span><span class="en">Social contract 10-15% + Corporate co-financing 15-20% + State/donor up to 70-95%</span></div>
-      <div class="metric-src src-g">✓ GREEN · Financing mechanism</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Financing mechanism
     <div class="metric-card">
       <div class="metric-val">5-35%+</div>
       <div class="metric-lbl"><span class="uk">покриття вартості курсу</span><span class="en">coverage of course cost</span></div>
-      <div class="metric-src src-g">✓ GREEN · Reverse Waterfall result</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Reverse Waterfall result
   </div>
 
   <div class="callout callout-gl">
@@ -995,8 +966,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">VI</div>
     <div class="sec-title-block">
       <h2><span class="uk">Правова реформа</span><span class="en">Legal Reform</span></h2>
-      <div class="sec-eng">MoU-first Approach: NBU/NSZU/World Bank → Standardization → Development → Formalization</div>
-    </div>
+      <div class="sec-eng">MoU-first Approach: NBU/NSZU/World Bank → Standardization → Development → Formalization
   </div>
 
   <div class="timeline">
@@ -1004,50 +974,42 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="tl-phase">Фаза 1</div>
       <div class="tl-title"><span class="uk">Меморандум про взаєморозуміння</span><span class="en">Memorandum of Understanding</span></div>
       <div class="tl-desc"><span class="uk">Підписання MoU з НБУ, НСЗУ та Світовим Банком</span><span class="en">Signing MoU with NBU, NSZU, and World Bank</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · Світовий Банк</span><span class="en">NBU · NSZU · World Bank</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · Світовий Банк</span><span class="en">NBU · NSZU · World Bank</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 2</div>
       <div class="tl-title"><span class="uk">Угода про стандартизацію</span><span class="en">Standardization Agreement</span></div>
       <div class="tl-desc"><span class="uk">Визначення єдиних стандартів MHEI та верифікації</span><span class="en">Defining unified MHEI and verification standards</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again</span><span class="en">NBU · NSZU · FEEL Again</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · FEEL Again</span><span class="en">NBU · NSZU · FEEL Again</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 3</div>
       <div class="tl-title"><span class="uk">Запуск розробки</span><span class="en">Development Launch</span></div>
       <div class="tl-desc"><span class="uk">Розробка технічної інфраструктури Digital Bus</span><span class="en">Development of Digital Bus technical infrastructure</span></div>
-      <div class="tl-actor"><span class="uk">FEEL Again · ENKIDU</span><span class="en">FEEL Again · ENKIDU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">FEEL Again · ENKIDU</span><span class="en">FEEL Again · ENKIDU</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 4</div>
       <div class="tl-title"><span class="uk">Одночасна формалізація</span><span class="en">Simultaneous Formalization</span></div>
       <div class="tl-desc"><span class="uk">Паралельна формалізація фахівців та інтеграція з НСЗУ</span><span class="en">Parallel formalization of practitioners and integration with NSZU</span></div>
-      <div class="tl-actor"><span class="uk">НСЗУ · FEEL Again</span><span class="en">NSZU · FEEL Again</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НСЗУ · FEEL Again</span><span class="en">NSZU · FEEL Again</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 5</div>
       <div class="tl-title"><span class="uk">Налаштування middleware</span><span class="en">Middleware Setup</span></div>
       <div class="tl-desc"><span class="uk">Налаштування middleware для інтеграції з існуючими системами</span><span class="en">Middleware setup for integration with existing systems</span></div>
-      <div class="tl-actor"><span class="uk">FEEL Again · НБУ</span><span class="en">FEEL Again · NBU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">FEEL Again · НБУ</span><span class="en">FEEL Again · NBU</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 6</div>
       <div class="tl-title"><span class="uk">Запуск Digital Bus</span><span class="en">Digital Bus Launch</span></div>
       <div class="tl-desc"><span class="uk">Офіційний запуск Digital Bus та Trust Bridge</span><span class="en">Official launch of Digital Bus and Trust Bridge</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · ENKIDU</span><span class="en">NBU · NSZU · ENKIDU</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · ENKIDU</span><span class="en">NBU · NSZU · ENKIDU</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 7</div>
       <div class="tl-title"><span class="uk">Міжгалузевий потік даних</span><span class="en">Interoperable Data Flow</span></div>
       <div class="tl-desc"><span class="uk">Впровадження міжгалузевого обміну даними</span><span class="en">Implementation of interoperable data exchange</span></div>
-      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · МОЗ</span><span class="en">NBU · NSZU · Ministry of Health</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">НБУ · НСЗУ · МОЗ</span><span class="en">NBU · NSZU · Ministry of Health</span>
     <div class="tl-item">
       <div class="tl-phase">Фаза 8</div>
       <div class="tl-title"><span class="uk">Множення</span><span class="en">Multiplication</span></div>
       <div class="tl-desc"><span class="uk">Масштабування рішення на інші сектори</span><span class="en">Scaling the solution to other sectors</span></div>
-      <div class="tl-actor"><span class="uk">FEEL Again · Донори</span><span class="en">FEEL Again · Donors</span></div>
-    </div>
+      <div class="tl-actor"><span class="uk">FEEL Again · Донори</span><span class="en">FEEL Again · Donors</span>
   </div>
 
   <div class="callout callout-gl">
@@ -1062,31 +1024,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">VII</div>
     <div class="sec-title-block">
       <h2><span class="uk">Фінансові інструменти</span><span class="en">Financial Instruments</span></h2>
-      <div class="sec-eng">SIB Bonds · PforR · Blended Finance · Trust Bridge</div>
-    </div>
+      <div class="sec-eng">SIB Bonds · PforR · Blended Finance · Trust Bridge
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">SIB Bonds</div>
       <div class="metric-lbl"><span class="uk">Соціальні облігації результату</span><span class="en">Social Impact Bonds</span></div>
-      <div class="metric-src src-g">✓ GREEN · Outcome-based financing</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Outcome-based financing
     <div class="metric-card">
       <div class="metric-val">PforR</div>
       <div class="metric-lbl"><span class="uk">Оплата за результат</span><span class="en">Payment for Results</span></div>
-      <div class="metric-src src-g">✓ GREEN · Results-based financing</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Results-based financing
     <div class="metric-card">
       <div class="metric-val">Blended Finance</div>
       <div class="metric-lbl"><span class="uk">Змішане фінансування через ENKIDU</span><span class="en">Blended Finance via ENKIDU</span></div>
-      <div class="metric-src src-g">✓ GREEN · Global consortium</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Global consortium
     <div class="metric-card">
       <div class="metric-val">Trust Bridge</div>
       <div class="metric-lbl"><span class="uk">Міст довіри з Digital Handshake</span><span class="en">Trust Bridge with Digital Handshake</span></div>
-      <div class="metric-src src-g">✓ GREEN · DIIA verification</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · DIIA verification
   </div>
 
   <div class="callout callout-res">
@@ -1135,31 +1092,26 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">VIII</div>
     <div class="sec-title-block">
       <h2><span class="uk">Сектор газелей</span><span class="en">Gazelle Sector</span></h2>
-      <div class="sec-eng">50-70K Mental Health Specialists · FOP Registration · Tax Incentives</div>
-    </div>
+      <div class="sec-eng">50-70K Mental Health Specialists · FOP Registration · Tax Incentives
   </div>
 
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-val">50-70K</div>
       <div class="metric-lbl"><span class="uk">фахівців з ментального здоров'я</span><span class="en">mental health specialists</span></div>
-      <div class="metric-src src-g">✓ GREEN · Market estimation</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Market estimation
     <div class="metric-card">
       <div class="metric-val">0%</div>
       <div class="metric-lbl"><span class="uk">зареєстровано як ФОП</span><span class="en">registered as FOP</span></div>
-      <div class="metric-src src-y">⚠ YELLOW · Current state</div>
-    </div>
+      <div class="metric-src src-y">⚠ YELLOW · Current state
     <div class="metric-card">
       <div class="metric-val res">100%</div>
       <div class="metric-lbl"><span class="uk">працюють у тіні</span><span class="en">working in shadow</span></div>
-      <div class="metric-src src-g">✓ GREEN · Market reality</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · Market reality
     <div class="metric-card">
       <div class="metric-val">260K</div>
       <div class="metric-lbl"><span class="uk">сесій/рік — потужність НСЗУ</span><span class="en">sessions/year — NSZU capacity</span></div>
-      <div class="metric-src src-g">✓ GREEN · НСЗУ</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · НСЗУ
   </div>
 
   <div class="callout callout-gl">
@@ -1179,8 +1131,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="sec-num">IX</div>
     <div class="sec-title-block">
       <h2><span class="uk">Конкретна пропозиція</span><span class="en">Recommended Action</span></h2>
-      <div class="sec-eng">Launch FEEL Again with MoU-first Approach · 2026 Action Window</div>
-    </div>
+      <div class="sec-eng">Launch FEEL Again with MoU-first Approach · 2026 Action Window
   </div>
 
   <div class="callout callout-gl">
@@ -1201,23 +1152,19 @@ window.addEventListener('DOMContentLoaded', () => {
     <div class="metric-card">
       <div class="metric-val">2026</div>
       <div class="metric-lbl"><span class="uk">вікно дій</span><span class="en">action window</span></div>
-      <div class="metric-src src-y">⚠ YELLOW · Urgent</div>
-    </div>
+      <div class="metric-src src-y">⚠ YELLOW · Urgent
     <div class="metric-card">
       <div class="metric-val res">$175,1M</div>
       <div class="metric-lbl"><span class="uk">адресований ринок</span><span class="en">addressable market</span></div>
-      <div class="metric-src src-g">✓ GREEN · WB HEAL + THRIVE</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · WB HEAL + THRIVE
     <div class="metric-card">
       <div class="metric-val">15-20%</div>
       <div class="metric-lbl"><span class="uk">покриття після впровадження</span><span class="en">coverage after implementation</span></div>
-      <div class="metric-src src-g">✓ GREEN · FEEL Again projection</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · FEEL Again projection
     <div class="metric-card">
       <div class="metric-val svc">7%</div>
       <div class="metric-lbl"><span class="uk">адмінтягар після автоматизації</span><span class="en">admin burden after automation</span></div>
-      <div class="metric-src src-g">✓ GREEN · FEEL Again</div>
-    </div>
+      <div class="metric-src src-g">✓ GREEN · FEEL Again
   </div>
 
   <div class="callout callout-res">
@@ -1231,7 +1178,7 @@ window.addEventListener('DOMContentLoaded', () => {
   </div>
 </section>
 
-</main>
+
 </div>
 
 <script>
