@@ -1,12 +1,4 @@
-# Cloudflare Pages redirects
-# brief.nbu.feelagain.me → nbu-short.html
-https://brief.nbu.feelagain.me/* /nbu-short.html 200
-
-# proposal.nbu.feelagain.me → nbu-full.html
-https://proposal.nbu.feelagain.me/* /nbu-full.html 200
-
-# brief.nszu.feelagain.me → nszu-short.html
-https://brief.nszu.feelagain.me/* /nszu-short.html 200
-
-# proposal.nszu.feelagain.me → nszu-full.html
-https://proposal.nszu.feelagain.me/* /nszu-full.html 200
+/nbu-short   /nbu-short.html   200
+/nbu-full    /nbu-full.html    200
+/nszu-short  /nszu-short.html  200
+/nszu-full   /nszu-full.html   200
