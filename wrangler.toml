@@ -1,5 +1,5 @@
 name = "proposals"
+compatibility_date = "2026-07-17"
 
 [assets]
 directory = "./"
-compatibility_date = "2026-07-17"
